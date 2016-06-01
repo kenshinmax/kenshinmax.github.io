@@ -91,6 +91,9 @@ body {
     color: #6b6b6b;
     background-color: #ffffff;
   }
+  article .full, article pre {
+    margin: 1em 0;
+  }
 }
 
 section {
