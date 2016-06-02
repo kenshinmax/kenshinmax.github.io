@@ -361,7 +361,7 @@ div.footer{
     /* Note: Design for a width of 320px */
 
     @media only screen and (max-width: 767px) {
-        .container { width: 300px; }
+        .container { width: 330px; text-align: center;}
         .container .columns,
         .container .column { margin: 0; }
 
