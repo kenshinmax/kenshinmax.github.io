@@ -141,7 +141,7 @@ article > header address + time::before {
 .container {
   width: auto;
   max-width: 800px;
-  /*text-align: center;*/
+  text-align: center;
 }
 .container .text-muted {
   margin: 20px 0;
@@ -232,6 +232,31 @@ article > header address + time::before {
 }
 
 .blogpost .full.zoomable img.zoom {
+    -webkit-transform: scale(1.5);
+    transition: 0.4s all ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.blogpost .small {
+
+}
+
+.blogpost .smalldark {
+  background: #333333; 
+  padding:100px
+}
+
+.blogpost .smalldark img {
+    max-width: 100%;
+    margin: 0;
+    transition: 0.5s all ease;   
+}
+
+.blogpost .smalldark.zoomable img {
+    cursor:-webkit-zoom-in;
+}
+
+.blogpost .smalldark.zoomable img.zoom {
     -webkit-transform: scale(1.5);
     transition: 0.4s all ease;
     box-shadow: 0 2px 5px rgba(0,0,0,0.5);
