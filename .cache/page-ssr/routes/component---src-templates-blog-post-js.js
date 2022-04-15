@@ -928,7 +928,7 @@ const Layout = ({
   title,
   children
 }) => {
-  const rootPath = `/`;
+  const rootPath = `${""}/`;
   const isRootPath = location.pathname === rootPath;
   let header;
 
@@ -1150,7 +1150,7 @@ module.exports = JSON.parse('{"data":{"site":{"siteMetadata":{"title":"Personal 
   \***********************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"data":{"site":{"siteMetadata":{"author":{"name":"Kyle Mathews","summary":"who lives and works in San Francisco building useful things."},"social":{"twitter":"kylemathews"}}}}}');
+module.exports = JSON.parse('{"data":{"site":{"siteMetadata":{"author":{"name":"Cliff Sanchez","summary":"who lives and works in New York building useful things."},"social":{"twitter":"kylemathews"}}}}}');
 
 /***/ })
 

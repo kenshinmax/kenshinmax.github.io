@@ -24,7 +24,7 @@ const Layout = ({
   title,
   children
 }) => {
-  const rootPath = `/`;
+  const rootPath = `${""}/`;
   const isRootPath = location.pathname === rootPath;
   let header;
 
