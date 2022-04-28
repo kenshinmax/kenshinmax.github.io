@@ -3,7 +3,7 @@
   "path": "/new-beginnings/",
   "result": {
     "data": {
-      "site": { "siteMetadata": { "title": "Gatsby Starter Blog (updated)" } },
+      "site": { "siteMetadata": { "title": "Gatsby Starter Blog" } },
       "markdownRemark": {
         "id": "6392a1b6-9575-5753-80e8-b61a5fd0baf0",
         "excerpt": "Far far away, behind the word mountains, far from the countries Vokalia and\nConsonantia, there live the blind texts. Separated they live in Bookmarksgrove\nright…",
