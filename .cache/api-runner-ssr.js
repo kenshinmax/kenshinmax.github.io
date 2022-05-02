@@ -18,6 +18,10 @@ var plugins = [{
       name: 'gatsby-plugin-google-gtag',
       plugin: require('/Users/cliffsanchez/projects/repos/kenshinmax.github.io/node_modules/gatsby-plugin-google-gtag/gatsby-ssr.js'),
       options: {"plugins":[],"trackingIds":["UA-49315603-1"],"pluginConfig":{"head":true}},
+    },{
+      name: 'gatsby-plugin-segment-js',
+      plugin: require('/Users/cliffsanchez/projects/repos/kenshinmax.github.io/node_modules/gatsby-plugin-segment-js/gatsby-ssr.js'),
+      options: {"plugins":[],"prodKey":"U2c3bnqWQjP50YmebQhAaE9NE3qERyAx","trackPage":false,"trackPageDelay":50,"delayLoad":false,"delayLoadTime":1000,"manualLoad":false,"customSnippet":"!function(){var analytics=window.analytics||[];...;analytics.load(\"${writeKey}\");analytics.page();}}();"},
     }]
 /* global plugins */
 // During bootstrap, we write requires at top of this file which looks like:

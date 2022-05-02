@@ -5,12 +5,20 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
-
+  const handleClick  =  () => {
+    window.analytics.track("Track Event Fired", {
+        userId: '0129',
+        gender: 'male',
+        age: 33,
+    });
+  }
   return (
+    
     <Layout location={location} title={siteTitle}>
       <Seo
         title={post.frontmatter.title}

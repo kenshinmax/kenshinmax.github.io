@@ -11,6 +11,9 @@ module.exports = [{
       plugin: require('../node_modules/gatsby-plugin-google-gtag/gatsby-browser.js'),
       options: {"plugins":[],"trackingIds":["UA-49315603-1"],"pluginConfig":{"head":true}},
     },{
+      plugin: require('../node_modules/gatsby-plugin-segment-js/gatsby-browser.js'),
+      options: {"plugins":[],"prodKey":"U2c3bnqWQjP50YmebQhAaE9NE3qERyAx","trackPage":false,"trackPageDelay":50,"delayLoad":false,"delayLoadTime":1000,"manualLoad":false,"customSnippet":"!function(){var analytics=window.analytics||[];...;analytics.load(\"${writeKey}\");analytics.page();}}();"},
+    },{
       plugin: require('../gatsby-browser.js'),
       options: {"plugins":[]},
     }]
