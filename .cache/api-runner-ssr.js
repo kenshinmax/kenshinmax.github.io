@@ -17,7 +17,7 @@ var plugins = [{
     },{
       name: 'gatsby-plugin-google-gtag',
       plugin: require('/Users/cliffsanchez/projects/repos/kenshinmax.github.io/node_modules/gatsby-plugin-google-gtag/gatsby-ssr.js'),
-      options: {"plugins":[],"trackingIds":["UA-49315603-1"],"gtagConfig":{"optimize_id":"OPT_CONTAINER_ID","anonymize_ip":true,"cookie_expires":0},"pluginConfig":{"head":false,"respectDNT":true,"exclude":["/preview/**","/do-not-track/me/too/"],"origin":"YOUR_SELF_HOSTED_ORIGIN"}},
+      options: {"plugins":[],"trackingIds":["UA-49315603-1"],"pluginConfig":{"head":true}},
     }]
 /* global plugins */
 // During bootstrap, we write requires at top of this file which looks like:

@@ -135,25 +135,50 @@ module.exports = {
         trackingIds: [
           "UA-49315603-1", // Google Analytics / GA
         ],
-        // This object gets passed directly to the gtag config command
-        // This config will be shared across all trackingIds
-        gtagConfig: {
-          optimize_id: "OPT_CONTAINER_ID",
-          anonymize_ip: true,
-          cookie_expires: 0,
-        },
         // This object is used for configuration specific to this plugin
         pluginConfig: {
           // Puts tracking script in the head instead of the body
-          head: false,
-          // Setting this parameter is also optional
-          respectDNT: true,
-          // Avoids sending pageview hits from custom paths
-          exclude: ["/preview/**", "/do-not-track/me/too/"],
-          // Defaults to https://www.googletagmanager.com
-          origin: "YOUR_SELF_HOSTED_ORIGIN",
+          head: true,
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-segment-js`,
+      options: {
+        // your segment write key for your production environment
+        // when process.env.NODE_ENV === 'production'
+        // required; non-empty string
+        prodKey: 'U2c3bnqWQjP50YmebQhAaE9NE3qERyAx',
+  
+        // if you have a development env for your segment account, paste that key here
+        // when process.env.NODE_ENV === 'development'
+        // optional; non-empty string
+        //devKey: 'SEGMENT_DEV_WRITE_KEY',
+  
+        // boolean (defaults to false) on whether you want
+        // to include analytics.page() automatically
+        // if false, see below on how to track pageviews manually
+        trackPage: false,
+  
+        // number (defaults to 50); time to wait after a route update before it should
+        // track the page change, to implement this, make sure your `trackPage` property is set to `true`
+        trackPageDelay: 50,
+  
+       
+        delayLoad: false,
+  
+        // number (default to 1000); time to wait after scroll or route change
+        // To be used when `delayLoad` is set to `true`
+        delayLoadTime: 1000,
+  
+        // Whether to completely skip calling `analytics.load({writeKey})`.
+        // ADVANCED FEATURE: only use if you are calling `analytics.load({writeKey})` manually
+        // elsewhere in your code or are using a library
+        // like: https://github.com/segmentio/consent-manager that will call it for you.
+        // Useful for only loading the tracking script once a user has opted in to being tracked, for example.
+        manualLoad: false,
+        customSnippet: '!function(){var analytics=window.analytics||[];...;analytics.load("${writeKey}");analytics.page();}}();'
+      }
+    }
   ],
 };
