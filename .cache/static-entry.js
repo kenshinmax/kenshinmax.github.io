@@ -1,4 +1,3 @@
-/* global HAS_REACT_18 */
 const React = require(`react`)
 const path = require(`path`)
 const {
@@ -281,10 +280,10 @@ export default async function staticPage({
     if (!bodyHtml) {
       try {
         // react 18 enabled
-        if (HAS_REACT_18) {
+        if (renderToPipeableStream) {
           const writableStream = new WritableAsPromise()
           const { pipe } = renderToPipeableStream(bodyComponent, {
-            onAllReady() {
+            onCompleteAll() {
               pipe(writableStream)
             },
             onError() {},

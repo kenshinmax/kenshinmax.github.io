@@ -1,4 +1,3 @@
-/* global HAS_REACT_18 */
 import React from "react"
 import ReactDOM from "react-dom"
 import io from "socket.io-client"
@@ -39,25 +38,6 @@ setLoader(loader)
 loader.setApiRunner(apiRunner)
 
 window.___loader = publicLoader
-
-let reactRender
-let reactHydrate
-if (HAS_REACT_18) {
-  const reactDomClient = require(`react-dom/client`)
-  reactRender = (Component, el) => {
-    const root = reactDomClient.createRoot(el)
-    root.render(Component)
-    return () => root.unmount()
-  }
-  reactHydrate = (Component, el) => reactDomClient.hydrateRoot(el, Component)
-} else {
-  const reactDomClient = require(`react-dom`)
-  reactRender = (Component, el) => {
-    reactDomClient.render(Component, el)
-    return () => ReactDOM.unmountComponentAtNode(el)
-  }
-  reactHydrate = reactDomClient.hydrate
-}
 
 // Do dummy dynamic import so the jsonp __webpack_require__.e is added to the commons.js
 // bundle. This ensures hot reloading doesn't break when someone first adds
@@ -152,9 +132,13 @@ apiRunnerAsync(`onClientEntry`).then(() => {
 
   // Client only pages have any empty body so we just do a normal
   // render to avoid React complaining about hydration mis-matches.
-  let defaultRenderer = reactRender
+  let defaultRenderer = ReactDOM.render
   if (focusEl && focusEl.children.length) {
-    defaultRenderer = reactHydrate
+    if (ReactDOM.hydrateRoot) {
+      defaultRenderer = ReactDOM.hydrateRoot
+    } else {
+      defaultRenderer = ReactDOM.hydrate
+    }
   }
 
   const renderer = apiRunner(
@@ -169,26 +153,19 @@ apiRunnerAsync(`onClientEntry`).then(() => {
     process.env.GATSBY_QUERY_ON_DEMAND_LOADING_INDICATOR === `true`
   ) {
     let indicatorMountElement
-    let cleanupFn
 
     const showIndicatorTimeout = setTimeout(() => {
       indicatorMountElement = document.createElement(
         `first-render-loading-indicator`
       )
       document.body.append(indicatorMountElement)
-      cleanupFn = renderer(<Indicator />, indicatorMountElement)
+      ReactDOM.render(<Indicator />, indicatorMountElement)
     }, 1000)
 
     dismissLoadingIndicator = () => {
       clearTimeout(showIndicatorTimeout)
       if (indicatorMountElement) {
-        // If user defined replaceHydrateFunction themselves the cleanupFn return might not be there
-        // So fallback to unmountComponentAtNode for now
-        if (cleanupFn) {
-          cleanupFn()
-        } else {
-          ReactDOM.unmountComponentAtNode(indicatorMountElement)
-        }
+        ReactDOM.unmountComponentAtNode(indicatorMountElement)
         indicatorMountElement.remove()
       }
     }
@@ -216,7 +193,16 @@ apiRunnerAsync(`onClientEntry`).then(() => {
         )
         document.body.append(indicatorMountElement)
 
-        renderer(<LoadingIndicatorEventHandler />, indicatorMountElement)
+        if (renderer === ReactDOM.hydrateRoot) {
+          ReactDOM.createRoot(indicatorMountElement).render(
+            <LoadingIndicatorEventHandler />
+          )
+        } else {
+          ReactDOM.render(
+            <LoadingIndicatorEventHandler />,
+            indicatorMountElement
+          )
+        }
       }
     }
 
@@ -239,7 +225,11 @@ apiRunnerAsync(`onClientEntry`).then(() => {
         dismissLoadingIndicator()
       }
 
-      renderer(<App />, rootElement)
+      if (renderer === ReactDOM.hydrateRoot) {
+        renderer(rootElement, <App />)
+      } else {
+        renderer(<App />, rootElement)
+      }
     }
 
     // https://github.com/madrobby/zepto/blob/b5ed8d607f67724788ec9ff492be297f64d47dfc/src/zepto.js#L439-L450

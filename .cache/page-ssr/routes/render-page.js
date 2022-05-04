@@ -3036,15 +3036,15 @@ function parsePath(path) {
   var hashIndex = pathname.indexOf("#");
 
   if (hashIndex !== -1) {
-    hash = pathname.slice(hashIndex);
-    pathname = pathname.slice(0, hashIndex);
+    hash = pathname.substr(hashIndex);
+    pathname = pathname.substr(0, hashIndex);
   }
 
   var searchIndex = pathname.indexOf("?");
 
   if (searchIndex !== -1) {
-    search = pathname.slice(searchIndex);
-    pathname = pathname.slice(0, searchIndex);
+    search = pathname.substr(searchIndex);
+    pathname = pathname.substr(0, searchIndex);
   }
 
   return {
@@ -3093,14 +3093,7 @@ function absolutify(path, current) {
     return path;
   }
 
-  var option = getGlobalTrailingSlash();
-  var absolutePath = (0, _utils.resolve)(path, current);
-
-  if (option === "always" || option === "never") {
-    return (0, _applyTrailingSlashOption.applyTrailingSlashOption)(absolutePath, option);
-  }
-
-  return absolutePath;
+  return (0, _utils.resolve)(path, current);
 }
 
 var rewriteLinkPath = function rewriteLinkPath(path, relativeTo) {
@@ -3515,6 +3508,30 @@ var plugins = [{
     "plugins": []
   }
 }, {
+  name: 'gatsby-plugin-google-gtag',
+  plugin: __webpack_require__(/*! ./node_modules/gatsby-plugin-google-gtag/gatsby-ssr.js */ "./node_modules/gatsby-plugin-google-gtag/gatsby-ssr.js"),
+  options: {
+    "plugins": [],
+    "trackingIds": ["UA-49315603-1"],
+    "pluginConfig": {
+      "head": true
+    }
+  }
+}, {
+  name: 'gatsby-plugin-segment-js',
+  plugin: __webpack_require__(/*! ./node_modules/gatsby-plugin-segment-js/gatsby-ssr.js */ "./node_modules/gatsby-plugin-segment-js/gatsby-ssr.js"),
+  options: {
+    "plugins": [],
+    "prodKey": "U2c3bnqWQjP50YmebQhAaE9NE3qERyAx",
+    "trackPage": false,
+    "trackPageDelay": 50,
+    "host": "https://override-segment-endpoint",
+    "delayLoad": false,
+    "delayLoadTime": 1000,
+    "manualLoad": false,
+    "customSnippet": "!function(){var analytics=window.analytics||[];...;analytics.load(\"${writeKey}\");analytics.page();}}();"
+  }
+}, {
   name: 'gatsby-plugin-feed',
   plugin: __webpack_require__(/*! ./node_modules/gatsby-plugin-feed/gatsby-ssr.js */ "./node_modules/gatsby-plugin-feed/gatsby-ssr.js"),
   options: {
@@ -3549,29 +3566,6 @@ var plugins = [{
   plugin: __webpack_require__(/*! ./node_modules/gatsby-plugin-react-helmet/gatsby-ssr.js */ "./node_modules/gatsby-plugin-react-helmet/gatsby-ssr.js"),
   options: {
     "plugins": []
-  }
-}, {
-  name: 'gatsby-plugin-google-gtag',
-  plugin: __webpack_require__(/*! ./node_modules/gatsby-plugin-google-gtag/gatsby-ssr.js */ "./node_modules/gatsby-plugin-google-gtag/gatsby-ssr.js"),
-  options: {
-    "plugins": [],
-    "trackingIds": ["UA-49315603-1"],
-    "pluginConfig": {
-      "head": true
-    }
-  }
-}, {
-  name: 'gatsby-plugin-segment-js',
-  plugin: __webpack_require__(/*! ./node_modules/gatsby-plugin-segment-js/gatsby-ssr.js */ "./node_modules/gatsby-plugin-segment-js/gatsby-ssr.js"),
-  options: {
-    "plugins": [],
-    "prodKey": "U2c3bnqWQjP50YmebQhAaE9NE3qERyAx",
-    "trackPage": false,
-    "trackPageDelay": 50,
-    "delayLoad": false,
-    "delayLoadTime": 1000,
-    "manualLoad": false,
-    "customSnippet": "!function(){var analytics=window.analytics||[];...;analytics.load(\"${writeKey}\");analytics.page();}}();"
   }
 }];
 /* global plugins */
@@ -4309,10 +4303,7 @@ const doesConnectionSupportPrefetch = () => {
   }
 
   return true;
-}; // Regex that matches common search crawlers
-
-
-const BOT_REGEX = /bot|crawler|spider|crawling/i;
+};
 
 const toPageResources = (pageData, component = null) => {
   const page = {
@@ -4637,11 +4628,6 @@ class BaseLoader {
   shouldPrefetch(pagePath) {
     // Skip prefetching if we know user is on slow or constrained connection
     if (!doesConnectionSupportPrefetch()) {
-      return false;
-    } // Don't prefetch if this is a crawler bot
-
-
-    if (navigator.userAgent && BOT_REGEX.test(navigator.userAgent)) {
       return false;
     } // Check if the page exists.
 

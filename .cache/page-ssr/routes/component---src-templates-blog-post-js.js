@@ -166,7 +166,7 @@ function f(e) {
   var t = e.lastIndexOf(".");
 
   if (-1 !== t) {
-    var a = e.slice(t + 1);
+    var a = e.substr(t + 1);
     if ("jpeg" === a) return "jpg";
     if (3 === a.length || 4 === a.length) return a;
   }
@@ -892,12 +892,12 @@ const Bio = () => {
     className: "bio-avatar",
     layout: "fixed",
     formats: ["auto", "webp", "avif"],
-    src: "../images/csanchez-profile.png",
+    src: "../images/profile-pic.png",
     width: 50,
     height: 50,
     quality: 95,
     alt: "Profile picture",
-    __imageData: __webpack_require__(/*! ./.cache/caches/gatsby-plugin-image/3584850638.json */ "./.cache/caches/gatsby-plugin-image/3584850638.json")
+    __imageData: __webpack_require__(/*! ./.cache/caches/gatsby-plugin-image/1243370623.json */ "./.cache/caches/gatsby-plugin-image/1243370623.json")
   }), (author === null || author === void 0 ? void 0 : author.name) && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", null, "Written by ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("strong", null, author.name), " ", (author === null || author === void 0 ? void 0 : author.summary) || null, ` `, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", {
     href: `https://twitter.com/${(social === null || social === void 0 ? void 0 : social.twitter) || ``}`
   }, "You should follow them on Twitter")));
@@ -1083,6 +1083,15 @@ const BlogPostTemplate = ({
     previous,
     next
   } = data;
+
+  const handleClick = () => {
+    window.analytics.track("Track Event Fired", {
+      userId: '0129',
+      gender: 'male',
+      age: 33
+    });
+  };
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
     location: location,
     title: siteTitle
@@ -1124,13 +1133,13 @@ const pageQuery = "3085459379";
 
 /***/ }),
 
-/***/ "./.cache/caches/gatsby-plugin-image/3584850638.json":
+/***/ "./.cache/caches/gatsby-plugin-image/1243370623.json":
 /*!***********************************************************!*\
-  !*** ./.cache/caches/gatsby-plugin-image/3584850638.json ***!
+  !*** ./.cache/caches/gatsby-plugin-image/1243370623.json ***!
   \***********************************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"layout":"fixed","backgroundColor":"#98b8d8","images":{"fallback":{"src":"/static/813a99ee649f1031119f411fa40dbc99/e5610/csanchez-profile.png","srcSet":"/static/813a99ee649f1031119f411fa40dbc99/e5610/csanchez-profile.png 50w,\\n/static/813a99ee649f1031119f411fa40dbc99/e9b55/csanchez-profile.png 100w","sizes":"50px"},"sources":[{"srcSet":"/static/813a99ee649f1031119f411fa40dbc99/d4bf4/csanchez-profile.avif 50w,\\n/static/813a99ee649f1031119f411fa40dbc99/ee81f/csanchez-profile.avif 100w","type":"image/avif","sizes":"50px"},{"srcSet":"/static/813a99ee649f1031119f411fa40dbc99/3faea/csanchez-profile.webp 50w,\\n/static/813a99ee649f1031119f411fa40dbc99/6a679/csanchez-profile.webp 100w","type":"image/webp","sizes":"50px"}]},"width":50,"height":50}');
+module.exports = JSON.parse('{"layout":"fixed","backgroundColor":"#98b8d8","images":{"fallback":{"src":"/static/813a99ee649f1031119f411fa40dbc99/e5610/profile-pic.png","srcSet":"/static/813a99ee649f1031119f411fa40dbc99/e5610/profile-pic.png 50w,\\n/static/813a99ee649f1031119f411fa40dbc99/e9b55/profile-pic.png 100w","sizes":"50px"},"sources":[{"srcSet":"/static/813a99ee649f1031119f411fa40dbc99/d4bf4/profile-pic.avif 50w,\\n/static/813a99ee649f1031119f411fa40dbc99/ee81f/profile-pic.avif 100w","type":"image/avif","sizes":"50px"},{"srcSet":"/static/813a99ee649f1031119f411fa40dbc99/3faea/profile-pic.webp 50w,\\n/static/813a99ee649f1031119f411fa40dbc99/6a679/profile-pic.webp 100w","type":"image/webp","sizes":"50px"}]},"width":50,"height":50}');
 
 /***/ }),
 
@@ -1140,7 +1149,7 @@ module.exports = JSON.parse('{"layout":"fixed","backgroundColor":"#98b8d8","imag
   \***********************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"data":{"site":{"siteMetadata":{"title":"Personal Blog","description":"A starter blog demonstrating what Gatsby can do.","social":{"twitter":"sanchezruns"}}}}}');
+module.exports = JSON.parse('{"data":{"site":{"siteMetadata":{"title":"Gatsby Starter Blog","description":"A starter blog demonstrating what Gatsby can do.","social":{"twitter":"sanchezruns"}}}}}');
 
 /***/ }),
 
@@ -1150,7 +1159,7 @@ module.exports = JSON.parse('{"data":{"site":{"siteMetadata":{"title":"Personal 
   \***********************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"data":{"site":{"siteMetadata":{"author":{"name":"Cliff Sanchez","summary":"who lives and works in New York building useful things."},"social":{"twitter":"sanchezruns"}}}}}');
+module.exports = JSON.parse('{"data":{"site":{"siteMetadata":{"author":{"name":"Cliff Sanchez","summary":"who lives and works in San Francisco building useful things."},"social":{"twitter":"sanchezruns"}}}}}');
 
 /***/ })
 

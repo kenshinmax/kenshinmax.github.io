@@ -3,6 +3,14 @@ var plugins = [{
       plugin: require('/Users/cliffsanchez/projects/repos/kenshinmax.github.io/node_modules/gatsby-plugin-image/gatsby-ssr.js'),
       options: {"plugins":[]},
     },{
+      name: 'gatsby-plugin-google-gtag',
+      plugin: require('/Users/cliffsanchez/projects/repos/kenshinmax.github.io/node_modules/gatsby-plugin-google-gtag/gatsby-ssr.js'),
+      options: {"plugins":[],"trackingIds":["UA-49315603-1"],"pluginConfig":{"head":true}},
+    },{
+      name: 'gatsby-plugin-segment-js',
+      plugin: require('/Users/cliffsanchez/projects/repos/kenshinmax.github.io/node_modules/gatsby-plugin-segment-js/gatsby-ssr.js'),
+      options: {"plugins":[],"prodKey":"U2c3bnqWQjP50YmebQhAaE9NE3qERyAx","trackPage":false,"trackPageDelay":50,"host":"https://override-segment-endpoint","delayLoad":false,"delayLoadTime":1000,"manualLoad":false,"customSnippet":"!function(){var analytics=window.analytics||[];...;analytics.load(\"${writeKey}\");analytics.page();}}();"},
+    },{
       name: 'gatsby-plugin-feed',
       plugin: require('/Users/cliffsanchez/projects/repos/kenshinmax.github.io/node_modules/gatsby-plugin-feed/gatsby-ssr.js'),
       options: {"plugins":[],"query":"\n          {\n            site {\n              siteMetadata {\n                title\n                description\n                siteUrl\n                site_url: siteUrl\n              }\n            }\n          }\n        ","feeds":[{"query":"\n              {\n                allMarkdownRemark(\n                  sort: { order: DESC, fields: [frontmatter___date] },\n                ) {\n                  nodes {\n                    excerpt\n                    html\n                    fields {\n                      slug\n                    }\n                    frontmatter {\n                      title\n                      date\n                    }\n                  }\n                }\n              }\n            ","output":"/rss.xml","title":"Gatsby Starter Blog RSS Feed"}]},
@@ -14,14 +22,6 @@ var plugins = [{
       name: 'gatsby-plugin-react-helmet',
       plugin: require('/Users/cliffsanchez/projects/repos/kenshinmax.github.io/node_modules/gatsby-plugin-react-helmet/gatsby-ssr.js'),
       options: {"plugins":[]},
-    },{
-      name: 'gatsby-plugin-google-gtag',
-      plugin: require('/Users/cliffsanchez/projects/repos/kenshinmax.github.io/node_modules/gatsby-plugin-google-gtag/gatsby-ssr.js'),
-      options: {"plugins":[],"trackingIds":["UA-49315603-1"],"pluginConfig":{"head":true}},
-    },{
-      name: 'gatsby-plugin-segment-js',
-      plugin: require('/Users/cliffsanchez/projects/repos/kenshinmax.github.io/node_modules/gatsby-plugin-segment-js/gatsby-ssr.js'),
-      options: {"plugins":[],"prodKey":"U2c3bnqWQjP50YmebQhAaE9NE3qERyAx","trackPage":false,"trackPageDelay":50,"delayLoad":false,"delayLoadTime":1000,"manualLoad":false,"customSnippet":"!function(){var analytics=window.analytics||[];...;analytics.load(\"${writeKey}\");analytics.page();}}();"},
     }]
 /* global plugins */
 // During bootstrap, we write requires at top of this file which looks like:
