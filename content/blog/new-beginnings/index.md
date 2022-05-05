@@ -1,15 +1,12 @@
 ---
-title: FullStory Digital Experience
+title: FullStory API
 date: "2015-05-28T22:40:32.169Z"
-description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
+description: FullStory provides a robust API layer to enable organnizations to manage all aspects of their FullStory digital experience platform. 
 ---
 
-Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-right at the coast of the Semantics, a large language ocean. A small river named
-Duden flows by their place and supplies it with the necessary regelialia.
+In this article, we will take a look at FullStory APIs for data export called Segment Export.
 
-## On deer horse aboard tritely yikes and much
+## Segment Export
 
 The Big Oxmox advised her not to do so, because there were thousands of bad
 Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
