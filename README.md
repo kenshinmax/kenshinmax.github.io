@@ -8,6 +8,6 @@
   Peronal Blog
 </h1>
 
-## 🚀 Quick start
+## 🚀 Updates soon to come
 Helpful articles about technology that are fun to read!
 
