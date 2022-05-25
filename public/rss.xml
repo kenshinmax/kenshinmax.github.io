@@ -1,14 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 06 May 2022 14:15:16 GMT</lastBuildDate><item><title><![CDATA[FullStory API]]></title><description><![CDATA[In this article, we will take a look at FullStory APIs for data export called Segment Export. Segment Export The Big Oxmox advised her not…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/new-beginnings/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/new-beginnings/</guid><pubDate>Mon, 02 May 2022 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;In this article, we will take a look at FullStory APIs for data export called Segment Export.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 25 May 2022 23:00:03 GMT</lastBuildDate><item><title><![CDATA[FullStory API]]></title><description><![CDATA[In this article, we will take a look at how to get data out of FullStory using Segment Export. Segment Export Segments in FullStory are…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/new-beginnings/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/new-beginnings/</guid><pubDate>Mon, 02 May 2022 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;In this article, we will take a look at how to get data out of FullStory using Segment Export.&lt;/p&gt;
 &lt;h3&gt;Segment Export&lt;/h3&gt;
-&lt;p&gt;The Big Oxmox advised her not to do so, because there were thousands of bad
-Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
-didn’t listen. She packed her seven versalia, put her initial into the belt and
-made herself on the way.&lt;/p&gt;
+&lt;p&gt;Segments in FullStory are based on how you want to organize a cohort of users.  Using different criteria or “filters” you can set criteria to refine your results.   When you login to FullStory, you land on the default Segment page, which consists of every event, user and session for the last 30 days.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/8450c6327b3405ccfd6420f8605af85f/0f98f/fullstory-segments-star-recent.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAKABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAe9cioP/xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAEFAl//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAXEAADAQAAAAAAAAAAAAAAAAAAARAx/9oACAEBAAE/Ia9iP//aAAwDAQACAAMAAAAQAw//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAYEAEBAQEBAAAAAAAAAAAAAAABACERgf/aAAgBAQABPxAVfYmxnJXjrJ57f//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;FullStory Segment&quot;
+        title=&quot;FullStory Segment&quot;
+        src=&quot;/static/8450c6327b3405ccfd6420f8605af85f/828fb/fullstory-segments-star-recent.jpg&quot;
+        srcset=&quot;/static/8450c6327b3405ccfd6420f8605af85f/ff44c/fullstory-segments-star-recent.jpg 158w,
+/static/8450c6327b3405ccfd6420f8605af85f/a6688/fullstory-segments-star-recent.jpg 315w,
+/static/8450c6327b3405ccfd6420f8605af85f/828fb/fullstory-segments-star-recent.jpg 630w,
+/static/8450c6327b3405ccfd6420f8605af85f/0ede0/fullstory-segments-star-recent.jpg 945w,
+/static/8450c6327b3405ccfd6420f8605af85f/3ac88/fullstory-segments-star-recent.jpg 1260w,
+/static/8450c6327b3405ccfd6420f8605af85f/0f98f/fullstory-segments-star-recent.jpg 1920w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;In some cases, you may want to export data collected by Fullstory to analyze with other tools, for example Tableau, Domo,  etc.  This can easily be accomplished using Segment Export.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;This however showed weasel&lt;/li&gt;
-&lt;li&gt;Well uncritical so misled
+&lt;li&gt;First, [Create a Segment]](&lt;a href=&quot;https://www.fullstory.com/blog/starred-segments/&quot;&gt;https://www.fullstory.com/blog/starred-segments/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Clicke Data Export
 &lt;ul&gt;
-&lt;li&gt;this is very interesting&lt;/li&gt;
+&lt;li&gt;Select output format&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Goodness much until that fluid owl&lt;/li&gt;
