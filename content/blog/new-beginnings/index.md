@@ -1,22 +1,23 @@
 ---
 title: FullStory API
-date: "2015-05-28T22:40:32.169Z"
+date: "2022-05-02T22:40:32.169Z"
 description: FullStory provides a robust API layer to enable organnizations to manage all aspects of their FullStory digital experience platform. 
 ---
 
-In this article, we will take a look at FullStory APIs for data export called Segment Export.
+In this article, we will take a look at how to get data out of FullStory using Segment Export.
 
-## Segment Export
+### Segment Export
 
-The Big Oxmox advised her not to do so, because there were thousands of bad
-Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
-didn’t listen. She packed her seven versalia, put her initial into the belt and
-made herself on the way.
+Segments in FullStory are based on how you want to organize a cohort of users.  Using different criteria or "filters" you can set criteria to refine your results.   When you login to FullStory, you land on the default Segment page, which consists of every event, user and session for the last 30 days.
 
-- This however showed weasel
-- Well uncritical so misled
-  - this is very interesting
-- Goodness much until that fluid owl
+![FullStory Segment](./fullstory-segments-star-recent.jpg)
+
+In some cases, you may want to export data collected by Fullstory to analyze with other tools, for example Tableau, Domo,  etc.  This can easily be accomplished using Segment Export.
+
+- First, [Create a Segment]](https://www.fullstory.com/blog/starred-segments/) 
+- Clicke Data Export
+  - Select output format
+- Goodness much until that fluid owl  
 
 When she reached the first hills of the **Italic Mountains**, she had a last
 view back on the skyline of her hometown _Bookmarksgrove_, the headline of
