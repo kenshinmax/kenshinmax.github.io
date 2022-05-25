@@ -5,7 +5,7 @@
   </a>
 </p>
 <h1 align="center">
-  Peronal Blog
+  Peronal Blog for React, Gatsby other web technology.
 </h1>
 
 ## 🚀 Updates soon to come
