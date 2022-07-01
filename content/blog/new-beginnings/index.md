@@ -26,9 +26,8 @@ Great news, with the FullStory API you can automate the export process.  It's a 
 > https://developer.fullstory.com/create-segment-export
 > https://developer.fullstory.com/get-operation
 > https://developer.fullstory.com/get-export-results
-```
 
-```
+### Data Destinations
 When she reached the first hills of the **Italic Mountains**, she had a last
 view back on the skyline of her hometown _Bookmarksgrove_, the headline of
 [Alphabet Village](http://google.com) and the subline of her own road, the Line
