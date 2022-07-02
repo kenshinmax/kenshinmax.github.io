@@ -8,7 +8,7 @@ In this article, we will take a look at how to get data out of FullStory using S
 
 ### FullStory - Segment Export
 
-FullStory is a capture all platform that enables you to search any user interaction that occurs during a visit to your digital property.  Using different criteria or "filters" you can refine a cohort of users that you want to analyze by mix and match User and Event criteria.  This is extremely helpful as you start to create and test different hypothesis.
+FullStory is a capture all platform that enables you to search any user interaction that occurs during a visit to your digital property.  Using different criteria or "filters" you can refine a cohort of users that you want to analyze by mixing and matching User and Event criteria, i.e. users that visited a page, clicked 'Add to Cart' and proceeded to checkout.
 
 ![FullStory Segment](./fullstory-segments-star-recent.jpg)
 
@@ -27,15 +27,4 @@ Great news, with the FullStory API you can automate the export process.  It's a 
 > https://developer.fullstory.com/get-operation
 > https://developer.fullstory.com/get-export-results
 
-### Data Destinations
-When she reached the first hills of the **Italic Mountains**, she had a last
-view back on the skyline of her hometown _Bookmarksgrove_, the headline of
-[Alphabet Village](http://google.com) and the subline of her own road, the Line
-Lane. Pityful a rhetoric question ran over her cheek, then she continued her
-way. On her way she met a copy.
-
-> The copy warned the Little Blind Text, that where it came from it would have
-> been rewritten a thousand times and everything that was left from its origin
-> would be the word "and" and the Little Blind Text should turn around and
-> return to its own, safe country.
 
