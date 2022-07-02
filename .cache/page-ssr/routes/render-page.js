@@ -1,128 +1,6 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/assertThisInitialized.js ***!
-  \**********************************************************************/
-/***/ ((module) => {
-
-function _assertThisInitialized(self) {
-  if (self === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-
-  return self;
-}
-
-module.exports = _assertThisInitialized, module.exports.__esModule = true, module.exports["default"] = module.exports;
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/extends.js":
-/*!********************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/extends.js ***!
-  \********************************************************/
-/***/ ((module) => {
-
-function _extends() {
-  module.exports = _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  }, module.exports.__esModule = true, module.exports["default"] = module.exports;
-  return _extends.apply(this, arguments);
-}
-
-module.exports = _extends, module.exports.__esModule = true, module.exports["default"] = module.exports;
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/inheritsLoose.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/inheritsLoose.js ***!
-  \**************************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-var setPrototypeOf = __webpack_require__(/*! ./setPrototypeOf.js */ "./node_modules/@babel/runtime/helpers/setPrototypeOf.js");
-
-function _inheritsLoose(subClass, superClass) {
-  subClass.prototype = Object.create(superClass.prototype);
-  subClass.prototype.constructor = subClass;
-  setPrototypeOf(subClass, superClass);
-}
-
-module.exports = _inheritsLoose, module.exports.__esModule = true, module.exports["default"] = module.exports;
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/interopRequireDefault.js ***!
-  \**********************************************************************/
-/***/ ((module) => {
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    "default": obj
-  };
-}
-
-module.exports = _interopRequireDefault, module.exports.__esModule = true, module.exports["default"] = module.exports;
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js ***!
-  \*****************************************************************************/
-/***/ ((module) => {
-
-function _objectWithoutPropertiesLoose(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-
-  return target;
-}
-
-module.exports = _objectWithoutPropertiesLoose, module.exports.__esModule = true, module.exports["default"] = module.exports;
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/setPrototypeOf.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/setPrototypeOf.js ***!
-  \***************************************************************/
-/***/ ((module) => {
-
-function _setPrototypeOf(o, p) {
-  module.exports = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
-    o.__proto__ = p;
-    return o;
-  }, module.exports.__esModule = true, module.exports["default"] = module.exports;
-  return _setPrototypeOf(o, p);
-}
-
-module.exports = _setPrototypeOf, module.exports.__esModule = true, module.exports["default"] = module.exports;
-
-/***/ }),
-
 /***/ "./node_modules/@gatsbyjs/reach-router/es/lib/history.js":
 /*!***************************************************************!*\
   !*** ./node_modules/@gatsbyjs/reach-router/es/lib/history.js ***!
@@ -2693,9 +2571,9 @@ var isArray = Array.isArray || function (xs) {
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
 
 exports.__esModule = true;
-exports.withPrefix = withPrefix;
-exports.withAssetPrefix = withAssetPrefix;
 exports.navigate = exports["default"] = void 0;
+exports.withAssetPrefix = withAssetPrefix;
+exports.withPrefix = withPrefix;
 
 var _objectWithoutPropertiesLoose2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js"));
 
@@ -3036,15 +2914,15 @@ function parsePath(path) {
   var hashIndex = pathname.indexOf("#");
 
   if (hashIndex !== -1) {
-    hash = pathname.substr(hashIndex);
-    pathname = pathname.substr(0, hashIndex);
+    hash = pathname.slice(hashIndex);
+    pathname = pathname.slice(0, hashIndex);
   }
 
   var searchIndex = pathname.indexOf("?");
 
   if (searchIndex !== -1) {
-    search = pathname.substr(searchIndex);
-    pathname = pathname.substr(0, searchIndex);
+    search = pathname.slice(searchIndex);
+    pathname = pathname.slice(0, searchIndex);
   }
 
   return {
@@ -3093,7 +2971,14 @@ function absolutify(path, current) {
     return path;
   }
 
-  return (0, _utils.resolve)(path, current);
+  var option = getGlobalTrailingSlash();
+  var absolutePath = (0, _utils.resolve)(path, current);
+
+  if (option === "always" || option === "never") {
+    return (0, _applyTrailingSlashOption.applyTrailingSlashOption)(absolutePath, option);
+  }
+
+  return absolutePath;
 }
 
 var rewriteLinkPath = function rewriteLinkPath(path, relativeTo) {
@@ -3144,9 +3029,11 @@ var applyTrailingSlashOption = function applyTrailingSlashOption(input, option) 
   }
 
   var hasHtmlSuffix = input.endsWith(".html");
+  var hasXmlSuffix = input.endsWith(".xml");
+  var hasPdfSuffix = input.endsWith(".pdf");
   if (input === "/") return input;
 
-  if (hasHtmlSuffix) {
+  if (hasHtmlSuffix || hasXmlSuffix || hasPdfSuffix) {
     option = "never";
   }
 
@@ -3459,6 +3346,340 @@ function useScrollRestoration(identifier) {
 
 /***/ }),
 
+/***/ "./node_modules/gatsby-script/dist/gatsby-script.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/gatsby-script/dist/gatsby-script.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Script": () => (/* binding */ Script),
+/* harmony export */   "ScriptStrategy": () => (/* binding */ ScriptStrategy),
+/* harmony export */   "scriptCache": () => (/* binding */ scriptCache),
+/* harmony export */   "scriptCallbackCache": () => (/* binding */ scriptCallbackCache)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js");
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _partytown_context__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./partytown-context */ "./node_modules/gatsby-script/dist/partytown-context.js");
+/* harmony import */ var _request_idle_callback_shim__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./request-idle-callback-shim */ "./node_modules/gatsby-script/dist/request-idle-callback-shim.js");
+
+
+
+
+let ScriptStrategy; // eslint-disable-next-line @typescript-eslint/naming-convention
+
+(function (ScriptStrategy) {
+  ScriptStrategy["postHydrate"] = "post-hydrate";
+  ScriptStrategy["idle"] = "idle";
+  ScriptStrategy["offMainThread"] = "off-main-thread";
+})(ScriptStrategy || (ScriptStrategy = {}));
+
+const handledProps = new Set([`src`, `strategy`, `dangerouslySetInnerHTML`, `children`, `onLoad`, `onError`]);
+const scriptCache = new Set();
+const scriptCallbackCache = new Map();
+function Script(props) {
+  const {
+    id,
+    src,
+    strategy = ScriptStrategy.postHydrate
+  } = props || {};
+  const {
+    collectScript
+  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(_partytown_context__WEBPACK_IMPORTED_MODULE_2__.PartytownContext);
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
+    let details;
+
+    switch (strategy) {
+      case ScriptStrategy.postHydrate:
+        details = injectScript(props);
+        break;
+
+      case ScriptStrategy.idle:
+        (0,_request_idle_callback_shim__WEBPACK_IMPORTED_MODULE_3__.requestIdleCallback)(() => {
+          details = injectScript(props);
+        });
+        break;
+
+      case ScriptStrategy.offMainThread:
+        if (collectScript) {
+          const attributes = resolveAttributes(props);
+          collectScript(attributes);
+        }
+
+        break;
+    }
+
+    return () => {
+      const {
+        script,
+        loadCallback,
+        errorCallback
+      } = details || {};
+
+      if (loadCallback) {
+        script === null || script === void 0 ? void 0 : script.removeEventListener(`load`, loadCallback);
+      }
+
+      if (errorCallback) {
+        script === null || script === void 0 ? void 0 : script.removeEventListener(`error`, errorCallback);
+      }
+
+      script === null || script === void 0 ? void 0 : script.remove();
+    };
+  }, []);
+
+  if (strategy === ScriptStrategy.offMainThread) {
+    const inlineScript = resolveInlineScript(props);
+    const attributes = resolveAttributes(props);
+
+    if (typeof window === `undefined`) {
+      if (collectScript) {
+        collectScript(attributes);
+      } else {
+        console.warn(`Unable to collect off-main-thread script '${id || src || `no-id-or-src`}' for configuration with Partytown.\nGatsby script components must be used either as a child of your page, in wrapPageElement, or wrapRootElement.\nSee https://gatsby.dev/gatsby-script for more information.`);
+      }
+    }
+
+    if (inlineScript) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("script", _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
+        type: "text/partytown",
+        "data-strategy": strategy,
+        crossOrigin: "anonymous"
+      }, attributes, {
+        dangerouslySetInnerHTML: {
+          __html: resolveInlineScript(props)
+        }
+      }));
+    }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("script", _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
+      type: "text/partytown",
+      src: proxyPartytownUrl(src),
+      "data-strategy": strategy,
+      crossOrigin: "anonymous"
+    }, attributes));
+  }
+
+  return null;
+}
+
+function injectScript(props) {
+  const {
+    id,
+    src,
+    strategy = ScriptStrategy.postHydrate,
+    onLoad,
+    onError
+  } = props || {};
+  const scriptKey = id || src;
+  const callbackNames = [`load`, `error`];
+  const currentCallbacks = {
+    load: onLoad,
+    error: onError
+  };
+
+  if (scriptKey) {
+    /**
+     * If a duplicate script is already loaded/errored, we replay load/error callbacks with the original event.
+     * If it's not yet loaded/errored, keep track of callbacks so we can call load/error callbacks for each when the event occurs.
+     */
+    for (const name of callbackNames) {
+      if (currentCallbacks !== null && currentCallbacks !== void 0 && currentCallbacks[name]) {
+        var _cachedCallbacks$name;
+
+        const cachedCallbacks = scriptCallbackCache.get(scriptKey) || {};
+        const {
+          callbacks = []
+        } = (cachedCallbacks === null || cachedCallbacks === void 0 ? void 0 : cachedCallbacks[name]) || {};
+        callbacks.push(currentCallbacks === null || currentCallbacks === void 0 ? void 0 : currentCallbacks[name]);
+
+        if (cachedCallbacks !== null && cachedCallbacks !== void 0 && (_cachedCallbacks$name = cachedCallbacks[name]) !== null && _cachedCallbacks$name !== void 0 && _cachedCallbacks$name.event) {
+          var _currentCallbacks$nam, _cachedCallbacks$name2;
+
+          currentCallbacks === null || currentCallbacks === void 0 ? void 0 : (_currentCallbacks$nam = currentCallbacks[name]) === null || _currentCallbacks$nam === void 0 ? void 0 : _currentCallbacks$nam.call(currentCallbacks, cachedCallbacks === null || cachedCallbacks === void 0 ? void 0 : (_cachedCallbacks$name2 = cachedCallbacks[name]) === null || _cachedCallbacks$name2 === void 0 ? void 0 : _cachedCallbacks$name2.event);
+        } else {
+          scriptCallbackCache.set(scriptKey, _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({}, cachedCallbacks, {
+            [name]: {
+              callbacks
+            }
+          }));
+        }
+      }
+    } // Avoid injecting duplicate scripts into the DOM
+
+
+    if (scriptCache.has(scriptKey)) {
+      return null;
+    }
+  }
+
+  const inlineScript = resolveInlineScript(props);
+  const attributes = resolveAttributes(props);
+  const script = document.createElement(`script`);
+
+  if (id) {
+    script.id = id;
+  }
+
+  script.dataset.strategy = strategy;
+
+  for (const [key, value] of Object.entries(attributes)) {
+    script.setAttribute(key, value);
+  }
+
+  if (inlineScript) {
+    script.textContent = inlineScript;
+  }
+
+  if (src) {
+    script.src = src;
+  }
+
+  const wrappedCallbacks = {};
+
+  if (scriptKey) {
+    // Add listeners on injected scripts so events are cached for use in de-duplicated script callbacks
+    for (const name of callbackNames) {
+      const wrappedEventCallback = event => onEventCallback(event, scriptKey, name);
+
+      script.addEventListener(name, wrappedEventCallback);
+      wrappedCallbacks[`${name}Callback`] = wrappedEventCallback;
+    }
+
+    scriptCache.add(scriptKey);
+  }
+
+  document.body.appendChild(script);
+  return {
+    script,
+    loadCallback: wrappedCallbacks.loadCallback,
+    errorCallback: wrappedCallbacks.errorCallback
+  };
+}
+
+function resolveInlineScript(props) {
+  const {
+    dangerouslySetInnerHTML,
+    children = ``
+  } = props || {};
+  const {
+    __html: dangerousHTML = ``
+  } = dangerouslySetInnerHTML || {};
+  return dangerousHTML || children;
+}
+
+function resolveAttributes(props) {
+  const attributes = {};
+
+  for (const [key, value] of Object.entries(props)) {
+    if (handledProps.has(key)) {
+      continue;
+    }
+
+    attributes[key] = value;
+  }
+
+  return attributes;
+}
+
+function proxyPartytownUrl(url) {
+  if (!url) {
+    return undefined;
+  }
+
+  return `/__third-party-proxy?url=${encodeURIComponent(url)}`;
+}
+
+function onEventCallback(event, scriptKey, eventName) {
+  const cachedCallbacks = scriptCallbackCache.get(scriptKey) || {};
+
+  for (const callback of (cachedCallbacks === null || cachedCallbacks === void 0 ? void 0 : (_cachedCallbacks$even = cachedCallbacks[eventName]) === null || _cachedCallbacks$even === void 0 ? void 0 : _cachedCallbacks$even.callbacks) || []) {
+    var _cachedCallbacks$even;
+
+    callback(event);
+  }
+
+  scriptCallbackCache.set(scriptKey, {
+    [eventName]: {
+      event
+    }
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/gatsby-script/dist/index.js":
+/*!**************************************************!*\
+  !*** ./node_modules/gatsby-script/dist/index.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "PartytownContext": () => (/* reexport safe */ _partytown_context__WEBPACK_IMPORTED_MODULE_1__.PartytownContext),
+/* harmony export */   "Script": () => (/* reexport safe */ _gatsby_script__WEBPACK_IMPORTED_MODULE_0__.Script),
+/* harmony export */   "ScriptStrategy": () => (/* reexport safe */ _gatsby_script__WEBPACK_IMPORTED_MODULE_0__.ScriptStrategy),
+/* harmony export */   "scriptCache": () => (/* reexport safe */ _gatsby_script__WEBPACK_IMPORTED_MODULE_0__.scriptCache),
+/* harmony export */   "scriptCallbackCache": () => (/* reexport safe */ _gatsby_script__WEBPACK_IMPORTED_MODULE_0__.scriptCallbackCache)
+/* harmony export */ });
+/* harmony import */ var _gatsby_script__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./gatsby-script */ "./node_modules/gatsby-script/dist/gatsby-script.js");
+/* harmony import */ var _partytown_context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./partytown-context */ "./node_modules/gatsby-script/dist/partytown-context.js");
+
+
+
+/***/ }),
+
+/***/ "./node_modules/gatsby-script/dist/partytown-context.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/gatsby-script/dist/partytown-context.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "PartytownContext": () => (/* binding */ PartytownContext)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+const PartytownContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)({});
+
+
+/***/ }),
+
+/***/ "./node_modules/gatsby-script/dist/request-idle-callback-shim.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/gatsby-script/dist/request-idle-callback-shim.js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "requestIdleCallback": () => (/* binding */ requestIdleCallback)
+/* harmony export */ });
+// https://developer.chrome.com/blog/using-requestidlecallback/#checking-for-requestidlecallback
+// https://github.com/vercel/next.js/blob/canary/packages/next/client/request-idle-callback.ts
+const requestIdleCallback = typeof self !== `undefined` && self.requestIdleCallback && self.requestIdleCallback.bind(window) || function (cb) {
+  const start = Date.now();
+  return setTimeout(function () {
+    cb({
+      didTimeout: false,
+      timeRemaining: function () {
+        return Math.max(0, 50 - (Date.now() - start));
+      }
+    });
+  }, 1);
+};
+
+/***/ }),
+
 /***/ "./node_modules/gatsby/dist/internal-plugins/bundle-optimisations/polyfills/object-assign.js":
 /*!***************************************************************************************************!*\
   !*** ./node_modules/gatsby/dist/internal-plugins/bundle-optimisations/polyfills/object-assign.js ***!
@@ -3470,6 +3691,66 @@ function useScrollRestoration(identifier) {
 
 module.exports = Object.assign;
 //# sourceMappingURL=object-assign.js.map
+
+/***/ }),
+
+/***/ "./node_modules/gatsby/dist/internal-plugins/partytown/gatsby-ssr.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/gatsby/dist/internal-plugins/partytown/gatsby-ssr.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+exports.__esModule = true;
+exports.wrapRootElement = exports.onRenderBody = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
+
+var _react2 = __webpack_require__(/*! @builder.io/partytown/react */ "./node_modules/@builder.io/partytown/react/index.cjs");
+
+var _gatsbyScript = __webpack_require__(/*! gatsby-script */ "./node_modules/gatsby-script/dist/index.js");
+
+const collectedScripts = new Map();
+
+const wrapRootElement = ({
+  element,
+  pathname
+}) => /*#__PURE__*/_react.default.createElement(_gatsbyScript.PartytownContext.Provider, {
+  value: {
+    collectScript: newScript => {
+      const currentCollectedScripts = collectedScripts.get(pathname) || [];
+      currentCollectedScripts.push(newScript);
+      collectedScripts.set(pathname, currentCollectedScripts);
+    }
+  }
+}, element);
+
+exports.wrapRootElement = wrapRootElement;
+
+const onRenderBody = ({
+  pathname,
+  setHeadComponents
+}) => {
+  const collectedScriptsOnPage = collectedScripts.get(pathname);
+
+  if (!(collectedScriptsOnPage !== null && collectedScriptsOnPage !== void 0 && collectedScriptsOnPage.length)) {
+    return;
+  }
+
+  const collectedForwards = collectedScriptsOnPage === null || collectedScriptsOnPage === void 0 ? void 0 : collectedScriptsOnPage.flatMap(script => (script === null || script === void 0 ? void 0 : script.forward) || []);
+  setHeadComponents([/*#__PURE__*/_react.default.createElement(_react2.Partytown, {
+    key: "partytown",
+    forward: collectedForwards
+  })]);
+  collectedScripts.delete(pathname);
+};
+
+exports.onRenderBody = onRenderBody;
+//# sourceMappingURL=gatsby-ssr.js.map
 
 /***/ }),
 
@@ -3564,6 +3845,12 @@ var plugins = [{
 }, {
   name: 'gatsby-plugin-react-helmet',
   plugin: __webpack_require__(/*! ./node_modules/gatsby-plugin-react-helmet/gatsby-ssr.js */ "./node_modules/gatsby-plugin-react-helmet/gatsby-ssr.js"),
+  options: {
+    "plugins": []
+  }
+}, {
+  name: 'partytown',
+  plugin: __webpack_require__(/*! ./node_modules/gatsby/dist/internal-plugins/partytown/gatsby-ssr.js */ "./node_modules/gatsby/dist/internal-plugins/partytown/gatsby-ssr.js"),
   options: {
     "plugins": []
   }
@@ -4127,12 +4414,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Link": () => (/* reexport safe */ gatsby_link__WEBPACK_IMPORTED_MODULE_1__["default"]),
 /* harmony export */   "PageRenderer": () => (/* reexport default from dynamic */ _public_page_renderer__WEBPACK_IMPORTED_MODULE_3___default.a),
+/* harmony export */   "PartytownContext": () => (/* reexport safe */ gatsby_script__WEBPACK_IMPORTED_MODULE_6__.PartytownContext),
+/* harmony export */   "Script": () => (/* reexport safe */ gatsby_script__WEBPACK_IMPORTED_MODULE_6__.Script),
+/* harmony export */   "ScriptStrategy": () => (/* reexport safe */ gatsby_script__WEBPACK_IMPORTED_MODULE_6__.ScriptStrategy),
 /* harmony export */   "StaticQuery": () => (/* binding */ StaticQuery),
 /* harmony export */   "StaticQueryContext": () => (/* binding */ StaticQueryContext),
 /* harmony export */   "graphql": () => (/* binding */ graphql),
 /* harmony export */   "navigate": () => (/* reexport safe */ gatsby_link__WEBPACK_IMPORTED_MODULE_1__.navigate),
 /* harmony export */   "parsePath": () => (/* reexport safe */ gatsby_link__WEBPACK_IMPORTED_MODULE_1__.parsePath),
 /* harmony export */   "prefetchPathname": () => (/* binding */ prefetchPathname),
+/* harmony export */   "scriptCache": () => (/* reexport safe */ gatsby_script__WEBPACK_IMPORTED_MODULE_6__.scriptCache),
+/* harmony export */   "scriptCallbackCache": () => (/* reexport safe */ gatsby_script__WEBPACK_IMPORTED_MODULE_6__.scriptCallbackCache),
 /* harmony export */   "useScrollRestoration": () => (/* reexport safe */ gatsby_react_router_scroll__WEBPACK_IMPORTED_MODULE_2__.useScrollRestoration),
 /* harmony export */   "useStaticQuery": () => (/* binding */ useStaticQuery),
 /* harmony export */   "withAssetPrefix": () => (/* reexport safe */ gatsby_link__WEBPACK_IMPORTED_MODULE_1__.withAssetPrefix),
@@ -4147,6 +4439,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _public_page_renderer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./public-page-renderer */ "./.cache/public-page-renderer.js");
 /* harmony import */ var _public_page_renderer__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_public_page_renderer__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _loader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./loader */ "./.cache/loader.js");
+/* harmony import */ var gatsby_script__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! gatsby-script */ "./node_modules/gatsby-script/dist/index.js");
 
 
 
@@ -4218,6 +4511,7 @@ StaticQuery.propTypes = {
 function graphql() {
   throw new Error(`It appears like Gatsby is misconfigured. Gatsby related \`graphql\` calls ` + `are supposed to only be evaluated at compile time, and then compiled away. ` + `Unfortunately, something went wrong and the query was left in the compiled code.\n\n` + `Unless your site has a complex or custom babel/Gatsby configuration this is likely a bug in Gatsby.`);
 }
+
 
 
 
@@ -4303,7 +4597,10 @@ const doesConnectionSupportPrefetch = () => {
   }
 
   return true;
-};
+}; // Regex that matches common search crawlers
+
+
+const BOT_REGEX = /bot|crawler|spider|crawling/i;
 
 const toPageResources = (pageData, component = null) => {
   const page = {
@@ -4628,6 +4925,11 @@ class BaseLoader {
   shouldPrefetch(pagePath) {
     // Skip prefetching if we know user is on slow or constrained connection
     if (!doesConnectionSupportPrefetch()) {
+      return false;
+    } // Don't prefetch if this is a crawler bot
+
+
+    if (navigator.userAgent && BOT_REGEX.test(navigator.userAgent)) {
       return false;
     } // Check if the page exists.
 
@@ -5162,7 +5464,7 @@ exports.onRenderBody = function (_ref, pluginOptions) {
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
 
 exports.__esModule = true;
-exports.defaultOptions = exports.runQuery = void 0;
+exports.runQuery = exports.defaultOptions = void 0;
 
 var _extends2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js"));
 
@@ -5321,7 +5623,7 @@ function onRenderBody(_ref) {
   }), React__namespace.createElement("script", {
     key: "gatsby-image-style-script",
     type: "module",
-    dangerouslySetInnerHTML: generateHtml("const e=\"undefined\"!=typeof HTMLImageElement&&\"loading\"in HTMLImageElement.prototype;e&&document.body.addEventListener(\"load\",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector(\"[data-placeholder-image]\"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition=\"opacity 500ms linear\")}))}),!0);")
+    dangerouslySetInnerHTML: generateHtml("const e=\"undefined\"!=typeof HTMLImageElement&&\"loading\"in HTMLImageElement.prototype;e&&document.body.addEventListener(\"load\",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector(\"[data-placeholder-image]\"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition=\"opacity 500ms linear\")}))}),!0);")
   })]);
 }
 
@@ -13102,7 +13404,9 @@ function withSideEffect(reducePropsToState, handleStateChangeOnClient, mapStateO
       }
     }
 
-    var SideEffect = /*#__PURE__*/function (_PureComponent) {
+    var SideEffect =
+    /*#__PURE__*/
+    function (_PureComponent) {
       _inheritsLoose(SideEffect, _PureComponent);
 
       function SideEffect() {
@@ -13144,7 +13448,7 @@ function withSideEffect(reducePropsToState, handleStateChangeOnClient, mapStateO
       };
 
       _proto.render = function render() {
-        return /*#__PURE__*/React__default.createElement(WrappedComponent, this.props);
+        return React__default.createElement(WrappedComponent, this.props);
       };
 
       return SideEffect;
@@ -13193,6 +13497,248 @@ module.exports = require("/Users/cliffsanchez/projects/repos/kenshinmax.github.i
 
 "use strict";
 module.exports = require("path");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/assertThisInitialized.js ***!
+  \**********************************************************************/
+/***/ ((module) => {
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+module.exports = _assertThisInitialized, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/extends.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/extends.js ***!
+  \********************************************************/
+/***/ ((module) => {
+
+function _extends() {
+  module.exports = _extends = Object.assign ? Object.assign.bind() : function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports;
+  return _extends.apply(this, arguments);
+}
+
+module.exports = _extends, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/inheritsLoose.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/inheritsLoose.js ***!
+  \**************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var setPrototypeOf = __webpack_require__(/*! ./setPrototypeOf.js */ "./node_modules/@babel/runtime/helpers/setPrototypeOf.js");
+
+function _inheritsLoose(subClass, superClass) {
+  subClass.prototype = Object.create(superClass.prototype);
+  subClass.prototype.constructor = subClass;
+  setPrototypeOf(subClass, superClass);
+}
+
+module.exports = _inheritsLoose, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/interopRequireDefault.js ***!
+  \**********************************************************************/
+/***/ ((module) => {
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+module.exports = _interopRequireDefault, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js ***!
+  \*****************************************************************************/
+/***/ ((module) => {
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+module.exports = _objectWithoutPropertiesLoose, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/setPrototypeOf.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/setPrototypeOf.js ***!
+  \***************************************************************/
+/***/ ((module) => {
+
+function _setPrototypeOf(o, p) {
+  module.exports = _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports;
+  return _setPrototypeOf(o, p);
+}
+
+module.exports = _setPrototypeOf, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@builder.io/partytown/integration/index.cjs":
+/*!******************************************************************!*\
+  !*** ./node_modules/@builder.io/partytown/integration/index.cjs ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+
+const PartytownSnippet = "/* Partytown 0.5.4 - MIT builder.io */\n!function(t,e,n,i,r,o,a,d,s,c,p,l){function u(){l||(l=1,\"/\"==(a=(o.lib||\"/~partytown/\")+(o.debug?\"debug/\":\"\"))[0]&&(s=e.querySelectorAll('script[type=\"text/partytown\"]'),i!=t?i.dispatchEvent(new CustomEvent(\"pt1\",{detail:t})):(d=setTimeout(w,1e4),e.addEventListener(\"pt0\",f),r?h(1):n.serviceWorker?n.serviceWorker.register(a+(o.swPath||\"partytown-sw.js\"),{scope:a}).then((function(t){t.active?h():t.installing&&t.installing.addEventListener(\"statechange\",(function(t){\"activated\"==t.target.state&&h()}))}),console.error):w())))}function h(t){c=e.createElement(t?\"script\":\"iframe\"),t||(c.setAttribute(\"style\",\"display:block;width:0;height:0;border:0;visibility:hidden\"),c.setAttribute(\"aria-hidden\",!0)),c.src=a+\"partytown-\"+(t?\"atomics.js?v=0.5.4\":\"sandbox-sw.html?\"+Date.now()),e.body.appendChild(c)}function w(t,n){for(f(),t=0;t<s.length;t++)(n=e.createElement(\"script\")).innerHTML=s[t].innerHTML,e.head.appendChild(n);c&&c.parentNode.removeChild(c)}function f(){clearTimeout(d)}o=t.partytown||{},i==t&&(o.forward||[]).map((function(e){p=t,e.split(\".\").map((function(e,n,i){p=p[i[n]]=n+1<i.length?\"push\"==i[n+1]?[]:p[i[n]]||{}:function(){(t._ptf=t._ptf||[]).push(i,arguments)}}))})),\"complete\"==e.readyState?u():(t.addEventListener(\"DOMContentLoaded\",u),t.addEventListener(\"load\",u))}(window,document,navigator,top,window.crossOriginIsolated);";
+
+const createSnippet = (config, snippetCode) => {
+    const { forward = [], ...filteredConfig } = config || {};
+    const configStr = JSON.stringify(filteredConfig, (k, v) => {
+        if (typeof v === 'function') {
+            v = String(v);
+            if (v.startsWith(k + '(')) {
+                v = 'function ' + v;
+            }
+        }
+        return v;
+    });
+    return [
+        `!(function(w,p,f,c){`,
+        Object.keys(filteredConfig).length > 0
+            ? `c=w[p]=Object.assign(w[p]||{},${configStr});`
+            : `c=w[p]=w[p]||{};`,
+        `c[f]=(c[f]||[])`,
+        forward.length > 0 ? `.concat(${JSON.stringify(forward)})` : ``,
+        `})(window,'partytown','forward');`,
+        snippetCode,
+    ].join('');
+};
+
+/**
+ * The `type` attribute for Partytown scripts, which does two things:
+ *
+ * 1. Prevents the `<script>` from executing on the main thread.
+ * 2. Is used as a selector so the Partytown library can find all scripts to execute in a web worker.
+ *
+ * @public
+ */
+const SCRIPT_TYPE = `text/partytown`;
+
+/**
+ * Function that returns the Partytown snippet as a string, which can be
+ * used as the innerHTML of the inlined Partytown script in the head.
+ *
+ * @public
+ */
+const partytownSnippet = (config) => createSnippet(config, PartytownSnippet);
+
+exports.SCRIPT_TYPE = SCRIPT_TYPE;
+exports.partytownSnippet = partytownSnippet;
+
+
+/***/ }),
+
+/***/ "./node_modules/@builder.io/partytown/react/index.cjs":
+/*!************************************************************!*\
+  !*** ./node_modules/@builder.io/partytown/react/index.cjs ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+
+var React = __webpack_require__(/*! react */ "react");
+var index_cjs = __webpack_require__(/*! ../integration/index.cjs */ "./node_modules/@builder.io/partytown/integration/index.cjs");
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+
+/**
+ * The React `<Partytown/>` component should be placed within the `<head>`
+ * of the document. This component should work for SSR/SSG only HTML
+ * (static HTML without javascript), clientside javascript only
+ * (entire React app is build with clientside javascript),
+ * and both SSR/SSG HTML that's then hydrated by the client.
+ *
+ * @public
+ */
+const Partytown = (props = {}) => {
+    // purposely not using useState() or useEffect() so this component
+    // can also work as a React Server Component
+    // this check is only be done on the client, and skipped over on the server
+    if (typeof document !== 'undefined' && !document._partytown) {
+        if (!document.querySelector('script[data-partytown]')) {
+            // the append script to document code should only run on the client
+            // and only if the SSR'd script doesn't already exist within the document.
+            // If the SSR'd script isn't found in the document, then this
+            // must be a clientside only render. Append the partytown script
+            // to the <head>.
+            const scriptElm = document.createElement('script');
+            scriptElm.dataset.partytown = '';
+            scriptElm.innerHTML = index_cjs.partytownSnippet(props);
+            document.head.appendChild(scriptElm);
+        }
+        // should only append this script once per document, and is not dynamic
+        document._partytown = true;
+    }
+    // `dangerouslySetInnerHTML` only works for scripts rendered as HTML from SSR.
+    // The added code will set the [type="data-pt-script"] attribute to the SSR rendered
+    // <script>. If this code renders as SSR HTML, then on the client it'll execute
+    // and add the attribute which will tell the Client JS of the component to NOT
+    // add the same script to the <head>.
+    const innerHTML = index_cjs.partytownSnippet(props) + 'document.currentScript.dataset.partytown="";';
+    return React__default["default"].createElement("script", { suppressHydrationWarning: true, dangerouslySetInnerHTML: { __html: innerHTML } });
+};
+
+exports.Partytown = Partytown;
+
 
 /***/ }),
 

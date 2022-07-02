@@ -9,6 +9,7 @@ exports.sanitizeComponents = void 0;
 
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
 
+/* global HAS_REACT_18 */
 const React = require(`react`);
 
 const path = require(`path`);
@@ -314,12 +315,12 @@ async function staticPage({
     if (!bodyHtml) {
       try {
         // react 18 enabled
-        if (renderToPipeableStream) {
+        if (HAS_REACT_18) {
           const writableStream = new WritableAsPromise();
           const {
             pipe
           } = renderToPipeableStream(bodyComponent, {
-            onCompleteAll() {
+            onAllReady() {
               pipe(writableStream);
             },
 
@@ -351,44 +352,16 @@ async function staticPage({
       pathPrefix: __PATH_PREFIX__
     });
     reversedScripts.forEach(script => {
-      // Add preload/prefetch <link>s for scripts.
-      headComponents.push( /*#__PURE__*/React.createElement("link", {
-        as: "script",
-        rel: script.rel,
-        key: script.name,
-        href: `${__PATH_PREFIX__}/${script.name}`
-      }));
+      // Add preload/prefetch <link>s magic comments
+      if (script.shouldGenerateLink) {
+        headComponents.push( /*#__PURE__*/React.createElement("link", {
+          as: "script",
+          rel: script.rel,
+          key: script.name,
+          href: `${__PATH_PREFIX__}/${script.name}`
+        }));
+      }
     });
-
-    if (pageData && !inlinePageData) {
-      headComponents.push( /*#__PURE__*/React.createElement("link", {
-        as: "fetch",
-        rel: "preload",
-        key: pageDataUrl,
-        href: pageDataUrl,
-        crossOrigin: "anonymous"
-      }));
-    }
-
-    staticQueryUrls.forEach(staticQueryUrl => headComponents.push( /*#__PURE__*/React.createElement("link", {
-      as: "fetch",
-      rel: "preload",
-      key: staticQueryUrl,
-      href: staticQueryUrl,
-      crossOrigin: "anonymous"
-    })));
-    const appDataUrl = getAppDataUrl();
-
-    if (appDataUrl) {
-      headComponents.push( /*#__PURE__*/React.createElement("link", {
-        as: "fetch",
-        rel: "preload",
-        key: appDataUrl,
-        href: appDataUrl,
-        crossOrigin: "anonymous"
-      }));
-    }
-
     reversedStyles.forEach(style => {
       // Add <link>s for styles that should be prefetched
       // otherwise, inline as a <style> tag

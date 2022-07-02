@@ -2,14 +2,14 @@
     "name": "gatsby-starter-blog",
     "private": true,
     "description": "A starter for a blog powered by Gatsby and Markdown",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "author": "Cliff Sanchez",
     "bugs": {
         "url": "https://github.com/gatsbyjs/gatsby/issues"
     },
     "dependencies": {
         "@segment/snippet": "^4.15.3",
-        "gatsby": "^4.10.0",
+        "gatsby": "^4.17.2",
         "gatsby-plugin-feed": "^4.10.0",
         "gatsby-plugin-gatsby-cloud": "^4.10.0",
         "gatsby-plugin-google-analytics": "^4.10.0",

@@ -97,33 +97,31 @@ module.exports["default"] = camelCase;
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "GatsbyImage": () => (/* binding */ Y),
-/* harmony export */   "MainImage": () => (/* binding */ q),
-/* harmony export */   "Placeholder": () => (/* binding */ C),
-/* harmony export */   "StaticImage": () => (/* binding */ J),
-/* harmony export */   "generateImageData": () => (/* binding */ y),
-/* harmony export */   "getImage": () => (/* binding */ R),
-/* harmony export */   "getImageData": () => (/* binding */ W),
-/* harmony export */   "getLowResolutionImageURL": () => (/* binding */ w),
-/* harmony export */   "getSrc": () => (/* binding */ x),
-/* harmony export */   "getSrcSet": () => (/* binding */ I),
-/* harmony export */   "withArtDirection": () => (/* binding */ j)
+/* harmony export */   "GatsbyImage": () => (/* binding */ B),
+/* harmony export */   "MainImage": () => (/* binding */ z),
+/* harmony export */   "Placeholder": () => (/* binding */ O),
+/* harmony export */   "StaticImage": () => (/* binding */ V),
+/* harmony export */   "generateImageData": () => (/* binding */ f),
+/* harmony export */   "getImage": () => (/* binding */ M),
+/* harmony export */   "getImageData": () => (/* binding */ x),
+/* harmony export */   "getLowResolutionImageURL": () => (/* binding */ m),
+/* harmony export */   "getSrc": () => (/* binding */ S),
+/* harmony export */   "getSrcSet": () => (/* binding */ N),
+/* harmony export */   "withArtDirection": () => (/* binding */ I)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var common_tags__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! common-tags */ "./node_modules/common-tags/es/index.js");
-/* harmony import */ var camelcase__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! camelcase */ "./node_modules/camelcase/index.js");
-/* harmony import */ var camelcase__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(camelcase__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var camelcase__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! camelcase */ "./node_modules/camelcase/index.js");
+/* harmony import */ var camelcase__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(camelcase__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
 
 
-
-function s() {
-  return s = Object.assign || function (e) {
+function n() {
+  return n = Object.assign || function (e) {
     for (var t = 1; t < arguments.length; t++) {
       var a = arguments[t];
 
@@ -131,10 +129,10 @@ function s() {
     }
 
     return e;
-  }, s.apply(this, arguments);
+  }, n.apply(this, arguments);
 }
 
-function l(e, t) {
+function o(e, t) {
   if (null == e) return {};
   var a,
       i,
@@ -146,174 +144,171 @@ function l(e, t) {
   return r;
 }
 
-var d,
-    u = [.25, .5, 1, 2],
-    c = [750, 1080, 1366, 1920],
-    h = [320, 654, 768, 1024, 1366, 1600, 1920, 2048, 2560, 3440, 3840, 4096],
-    g = function (e) {
+var s = [.25, .5, 1, 2],
+    l = [750, 1080, 1366, 1920],
+    d = [320, 654, 768, 1024, 1366, 1600, 1920, 2048, 2560, 3440, 3840, 4096],
+    u = function (e) {
   return console.warn(e);
 },
-    p = function (e, t) {
+    c = function (e, t) {
   return e - t;
 },
-    m = function (e) {
+    h = function (e) {
   return e.map(function (e) {
     return e.src + " " + e.width + "w";
   }).join(",\n");
 };
 
-function f(e) {
+function g(e) {
   var t = e.lastIndexOf(".");
 
   if (-1 !== t) {
-    var a = e.substr(t + 1);
+    var a = e.slice(t + 1);
     if ("jpeg" === a) return "jpg";
     if (3 === a.length || 4 === a.length) return a;
   }
 }
 
-function v(e) {
+function p(e) {
   var t = e.layout,
-      a = void 0 === t ? "constrained" : t,
-      i = e.width,
-      n = e.height,
-      o = e.sourceMetadata,
+      i = void 0 === t ? "constrained" : t,
+      r = e.width,
+      o = e.height,
+      s = e.sourceMetadata,
       l = e.breakpoints,
       d = e.aspectRatio,
       u = e.formats,
       c = void 0 === u ? ["auto", "webp"] : u;
   return c = c.map(function (e) {
     return e.toLowerCase();
-  }), a = camelcase__WEBPACK_IMPORTED_MODULE_2___default()(a), i && n ? s({}, e, {
+  }), i = camelcase__WEBPACK_IMPORTED_MODULE_1___default()(i), r && o ? n({}, e, {
     formats: c,
-    layout: a,
-    aspectRatio: i / n
-  }) : (o.width && o.height && !d && (d = o.width / o.height), "fullWidth" === a ? (i = i || o.width || l[l.length - 1], n = n || Math.round(i / (d || 1.3333333333333333))) : (i || (i = n && d ? n * d : o.width ? o.width : n ? Math.round(n / 1.3333333333333333) : 800), d && !n ? n = Math.round(i / d) : d || (d = i / n)), s({}, e, {
-    width: i,
-    height: n,
+    layout: i,
+    aspectRatio: r / o
+  }) : (s.width && s.height && !d && (d = s.width / s.height), "fullWidth" === i ? (r = r || s.width || l[l.length - 1], o = o || Math.round(r / (d || 1.3333333333333333))) : (r || (r = o && d ? o * d : s.width ? s.width : o ? Math.round(o / 1.3333333333333333) : 800), d && !o ? o = Math.round(r / d) : d || (d = r / o)), n({}, e, {
+    width: r,
+    height: o,
     aspectRatio: d,
-    layout: a,
+    layout: i,
     formats: c
   }));
 }
 
-function w(e, t) {
+function m(e, t) {
   var a;
-  return void 0 === t && (t = 20), null == (a = (0, (e = v(e)).generateImageSource)(e.filename, t, Math.round(t / e.aspectRatio), e.sourceMetadata.format || "jpg", e.fit, e.options)) ? void 0 : a.src;
+  return void 0 === t && (t = 20), null == (a = (0, (e = p(e)).generateImageSource)(e.filename, t, Math.round(t / e.aspectRatio), e.sourceMetadata.format || "jpg", e.fit, e.options)) ? void 0 : a.src;
 }
 
-function y(e) {
+function f(e) {
   var t,
-      a = (e = v(e)).pluginName,
-      r = e.sourceMetadata,
-      n = e.generateImageSource,
+      a = (e = p(e)).pluginName,
+      i = e.sourceMetadata,
+      r = e.generateImageSource,
       o = e.layout,
-      l = e.fit,
-      h = e.options,
-      p = e.width,
-      w = e.height,
-      y = e.filename,
-      M = e.reporter,
-      S = void 0 === M ? {
-    warn: g
-  } : M,
-      N = e.backgroundColor,
-      R = e.placeholderURL;
-  if (a || S.warn('[gatsby-plugin-image] "generateImageData" was not passed a plugin name'), "function" != typeof n) throw new Error("generateImageSource must be a function");
-  r && (r.width || r.height) ? r.format || (r.format = f(y)) : r = {
-    width: p,
-    height: w,
-    format: (null == (t = r) ? void 0 : t.format) || f(y) || "auto"
+      d = e.fit,
+      c = e.options,
+      m = e.width,
+      f = e.height,
+      b = e.filename,
+      E = e.reporter,
+      k = void 0 === E ? {
+    warn: u
+  } : E,
+      M = e.backgroundColor,
+      S = e.placeholderURL;
+  if (a || k.warn('[gatsby-plugin-image] "generateImageData" was not passed a plugin name'), "function" != typeof r) throw new Error("generateImageSource must be a function");
+  i && (i.width || i.height) ? i.format || (i.format = g(b)) : i = {
+    width: m,
+    height: f,
+    format: (null == (t = i) ? void 0 : t.format) || g(b) || "auto"
   };
-  var x = new Set(e.formats);
-  (0 === x.size || x.has("auto") || x.has("")) && (x.delete("auto"), x.delete(""), x.add(r.format)), x.has("jpg") && x.has("png") && (S.warn("[" + a + "] Specifying both 'jpg' and 'png' formats is not supported. Using 'auto' instead"), x.delete("jpg" === r.format ? "png" : "jpg"));
+  var N = new Set(e.formats);
+  (0 === N.size || N.has("auto") || N.has("")) && (N.delete("auto"), N.delete(""), N.add(i.format)), N.has("jpg") && N.has("png") && (k.warn("[" + a + "] Specifying both 'jpg' and 'png' formats is not supported. Using 'auto' instead"), N.delete("jpg" === i.format ? "png" : "jpg"));
 
-  var I = function (e) {
+  var x = function (e) {
     var t = e.filename,
         a = e.layout,
-        r = void 0 === a ? "constrained" : a,
-        n = e.sourceMetadata,
+        i = void 0 === a ? "constrained" : a,
+        r = e.sourceMetadata,
         o = e.reporter,
-        l = void 0 === o ? {
-      warn: g
+        d = void 0 === o ? {
+      warn: u
     } : o,
-        h = e.breakpoints,
-        p = void 0 === h ? c : h,
-        m = Object.entries({
+        c = e.breakpoints,
+        h = void 0 === c ? l : c,
+        g = Object.entries({
       width: e.width,
       height: e.height
     }).filter(function (e) {
       var t = e[1];
       return "number" == typeof t && t < 1;
     });
-    if (m.length) throw new Error("Specified dimensions for images must be positive numbers (> 0). Problem dimensions you have are " + m.map(function (e) {
+    if (g.length) throw new Error("Specified dimensions for images must be positive numbers (> 0). Problem dimensions you have are " + g.map(function (e) {
       return e.join(": ");
     }).join(", "));
-    return "fixed" === r ? function (e) {
+    return "fixed" === i ? function (e) {
       var t = e.filename,
           a = e.sourceMetadata,
-          r = e.width,
-          n = e.height,
-          o = e.fit,
-          s = void 0 === o ? "cover" : o,
+          i = e.width,
+          r = e.height,
+          n = e.fit,
+          o = void 0 === n ? "cover" : n,
           l = e.outputPixelDensities,
-          c = e.reporter,
-          h = void 0 === c ? {
-        warn: g
-      } : c,
-          p = a.width / a.height,
-          m = b(void 0 === l ? u : l);
+          d = e.reporter,
+          c = void 0 === d ? {
+        warn: u
+      } : d,
+          h = a.width / a.height,
+          g = v(void 0 === l ? s : l);
 
-      if (r && n) {
-        var f = k(a, {
-          width: r,
-          height: n,
-          fit: s
+      if (i && r) {
+        var p = y(a, {
+          width: i,
+          height: r,
+          fit: o
         });
-        r = f.width, n = f.height, p = f.aspectRatio;
+        i = p.width, r = p.height, h = p.aspectRatio;
       }
 
-      r ? n || (n = Math.round(r / p)) : r = n ? Math.round(n * p) : 800;
-      var v,
-          w,
-          y = r;
+      i ? r || (r = Math.round(i / h)) : i = r ? Math.round(r * h) : 800;
+      var m = i;
 
-      if (a.width < r || a.height < n) {
-        var E = a.width < r ? "width" : "height";
-        h.warn((0,common_tags__WEBPACK_IMPORTED_MODULE_1__.stripIndent)(d || (v = ["\n    The requested ", ' "', 'px" for the image ', " was larger than the actual image ", " of ", "px. If possible, replace the current image with a larger one."], w || (w = v.slice(0)), v.raw = w, d = v), E, "width" === E ? r : n, t, E, a[E])), "width" === E ? (r = a.width, n = Math.round(r / p)) : r = (n = a.height) * p;
+      if (a.width < i || a.height < r) {
+        var f = a.width < i ? "width" : "height";
+        c.warn("\nThe requested " + f + ' "' + ("width" === f ? i : r) + 'px" for the image ' + t + " was larger than the actual image " + f + " of " + a[f] + "px. If possible, replace the current image with a larger one."), "width" === f ? (i = a.width, r = Math.round(i / h)) : i = (r = a.height) * h;
       }
 
       return {
-        sizes: m.filter(function (e) {
+        sizes: g.filter(function (e) {
           return e >= 1;
         }).map(function (e) {
-          return Math.round(e * r);
+          return Math.round(e * i);
         }).filter(function (e) {
           return e <= a.width;
         }),
-        aspectRatio: p,
-        presentationWidth: y,
-        presentationHeight: Math.round(y / p),
-        unscaledWidth: r
+        aspectRatio: h,
+        presentationWidth: m,
+        presentationHeight: Math.round(m / h),
+        unscaledWidth: i
       };
-    }(e) : "constrained" === r ? E(e) : "fullWidth" === r ? E(s({
-      breakpoints: p
-    }, e)) : (l.warn("No valid layout was provided for the image at " + t + ". Valid image layouts are fixed, fullWidth, and constrained. Found " + r), {
-      sizes: [n.width],
-      presentationWidth: n.width,
-      presentationHeight: n.height,
-      aspectRatio: n.width / n.height,
-      unscaledWidth: n.width
+    }(e) : "constrained" === i ? w(e) : "fullWidth" === i ? w(n({
+      breakpoints: h
+    }, e)) : (d.warn("No valid layout was provided for the image at " + t + ". Valid image layouts are fixed, fullWidth, and constrained. Found " + i), {
+      sizes: [r.width],
+      presentationWidth: r.width,
+      presentationHeight: r.height,
+      aspectRatio: r.width / r.height,
+      unscaledWidth: r.width
     });
-  }(s({}, e, {
-    sourceMetadata: r
+  }(n({}, e, {
+    sourceMetadata: i
   })),
-      W = {
+      I = {
     sources: []
   },
-      j = e.sizes;
+      W = e.sizes;
 
-  j || (j = function (e, t) {
+  W || (W = function (e, t) {
     switch (t) {
       case "constrained":
         return "(min-width: " + e + "px) " + e + "px, 100vw";
@@ -327,99 +322,99 @@ function y(e) {
       default:
         return;
     }
-  }(I.presentationWidth, o)), x.forEach(function (e) {
-    var t = I.sizes.map(function (t) {
-      var i = n(y, t, Math.round(t / I.aspectRatio), e, l, h);
+  }(x.presentationWidth, o)), N.forEach(function (e) {
+    var t = x.sizes.map(function (t) {
+      var i = r(b, t, Math.round(t / x.aspectRatio), e, d, c);
       if (null != i && i.width && i.height && i.src && i.format) return i;
-      S.warn("[" + a + "] The resolver for image " + y + " returned an invalid value.");
+      k.warn("[" + a + "] The resolver for image " + b + " returned an invalid value.");
     }).filter(Boolean);
 
     if ("jpg" === e || "png" === e || "auto" === e) {
       var i = t.find(function (e) {
-        return e.width === I.unscaledWidth;
+        return e.width === x.unscaledWidth;
       }) || t[0];
-      i && (W.fallback = {
+      i && (I.fallback = {
         src: i.src,
-        srcSet: m(t),
-        sizes: j
+        srcSet: h(t),
+        sizes: W
       });
     } else {
-      var r;
-      null == (r = W.sources) || r.push({
-        srcSet: m(t),
-        sizes: j,
+      var n;
+      null == (n = I.sources) || n.push({
+        srcSet: h(t),
+        sizes: W,
         type: "image/" + e
       });
     }
   });
-  var _ = {
-    images: W,
+  var R = {
+    images: I,
     layout: o,
-    backgroundColor: N
+    backgroundColor: M
   };
 
-  switch (R && (_.placeholder = {
-    fallback: R
+  switch (S && (R.placeholder = {
+    fallback: S
   }), o) {
     case "fixed":
-      _.width = I.presentationWidth, _.height = I.presentationHeight;
+      R.width = x.presentationWidth, R.height = x.presentationHeight;
       break;
 
     case "fullWidth":
-      _.width = 1, _.height = 1 / I.aspectRatio;
+      R.width = 1, R.height = 1 / x.aspectRatio;
       break;
 
     case "constrained":
-      _.width = e.width || I.presentationWidth || 1, _.height = (_.width || 1) / I.aspectRatio;
+      R.width = e.width || x.presentationWidth || 1, R.height = (R.width || 1) / x.aspectRatio;
   }
 
-  return _;
+  return R;
 }
 
-var b = function (e) {
-  return Array.from(new Set([1].concat(e))).sort(p);
+var v = function (e) {
+  return Array.from(new Set([1].concat(e))).sort(c);
 };
 
-function E(e) {
+function w(e) {
   var t,
       a = e.sourceMetadata,
       i = e.width,
       r = e.height,
       n = e.fit,
       o = void 0 === n ? "cover" : n,
-      s = e.outputPixelDensities,
-      l = e.breakpoints,
-      d = e.layout,
-      c = a.width / a.height,
-      h = b(void 0 === s ? u : s);
+      l = e.outputPixelDensities,
+      d = e.breakpoints,
+      u = e.layout,
+      h = a.width / a.height,
+      g = v(void 0 === l ? s : l);
 
   if (i && r) {
-    var g = k(a, {
+    var p = y(a, {
       width: i,
       height: r,
       fit: o
     });
-    i = g.width, r = g.height, c = g.aspectRatio;
+    i = p.width, r = p.height, h = p.aspectRatio;
   }
 
-  i = i && Math.min(i, a.width), r = r && Math.min(r, a.height), i || r || (r = (i = Math.min(800, a.width)) / c), i || (i = r * c);
+  i = i && Math.min(i, a.width), r = r && Math.min(r, a.height), i || r || (r = (i = Math.min(800, a.width)) / h), i || (i = r * h);
   var m = i;
-  return (a.width < i || a.height < r) && (i = a.width, r = a.height), i = Math.round(i), (null == l ? void 0 : l.length) > 0 ? (t = l.filter(function (e) {
+  return (a.width < i || a.height < r) && (i = a.width, r = a.height), i = Math.round(i), (null == d ? void 0 : d.length) > 0 ? (t = d.filter(function (e) {
     return e <= a.width;
-  })).length < l.length && !t.includes(a.width) && t.push(a.width) : t = (t = h.map(function (e) {
+  })).length < d.length && !t.includes(a.width) && t.push(a.width) : t = (t = g.map(function (e) {
     return Math.round(e * i);
   })).filter(function (e) {
     return e <= a.width;
-  }), "constrained" !== d || t.includes(i) || t.push(i), {
-    sizes: t = t.sort(p),
-    aspectRatio: c,
+  }), "constrained" !== u || t.includes(i) || t.push(i), {
+    sizes: t = t.sort(c),
+    aspectRatio: h,
     presentationWidth: m,
-    presentationHeight: Math.round(m / c),
+    presentationHeight: Math.round(m / h),
     unscaledWidth: i
   };
 }
 
-function k(e, t) {
+function y(e, t) {
   var a = e.width / e.height,
       i = t.width,
       r = t.height;
@@ -452,48 +447,48 @@ function k(e, t) {
   };
 }
 
-var M = ["baseUrl", "urlBuilder", "sourceWidth", "sourceHeight", "pluginName", "formats", "breakpoints", "options"],
-    S = ["images", "placeholder"];
+var b = ["baseUrl", "urlBuilder", "sourceWidth", "sourceHeight", "pluginName", "formats", "breakpoints", "options"],
+    E = ["images", "placeholder"];
 
-function N() {
+function k() {
   return "undefined" != typeof GATSBY___IMAGE && GATSBY___IMAGE;
 }
 
-new Set();
-
-var R = function (e) {
+var M = function (e) {
   var t;
   return function (e) {
     var t, a;
     return Boolean(null == e || null == (t = e.images) || null == (a = t.fallback) ? void 0 : a.src);
   }(e) ? e : function (e) {
     return Boolean(null == e ? void 0 : e.gatsbyImageData);
-  }(e) ? e.gatsbyImageData : null == e || null == (t = e.childImageSharp) ? void 0 : t.gatsbyImageData;
+  }(e) ? e.gatsbyImageData : function (e) {
+    return Boolean(null == e ? void 0 : e.gatsbyImage);
+  }(e) ? e.gatsbyImage : null == e || null == (t = e.childImageSharp) ? void 0 : t.gatsbyImageData;
 },
-    x = function (e) {
+    S = function (e) {
   var t, a, i;
-  return null == (t = R(e)) || null == (a = t.images) || null == (i = a.fallback) ? void 0 : i.src;
+  return null == (t = M(e)) || null == (a = t.images) || null == (i = a.fallback) ? void 0 : i.src;
 },
-    I = function (e) {
+    N = function (e) {
   var t, a, i;
-  return null == (t = R(e)) || null == (a = t.images) || null == (i = a.fallback) ? void 0 : i.srcSet;
+  return null == (t = M(e)) || null == (a = t.images) || null == (i = a.fallback) ? void 0 : i.srcSet;
 };
 
-function W(e) {
+function x(e) {
   var t,
       a = e.baseUrl,
       i = e.urlBuilder,
       r = e.sourceWidth,
-      n = e.sourceHeight,
-      o = e.pluginName,
-      d = void 0 === o ? "getImageData" : o,
-      u = e.formats,
-      c = void 0 === u ? ["auto"] : u,
+      s = e.sourceHeight,
+      l = e.pluginName,
+      u = void 0 === l ? "getImageData" : l,
+      c = e.formats,
+      h = void 0 === c ? ["auto"] : c,
       g = e.breakpoints,
       p = e.options,
-      m = l(e, M);
-  return null != (t = g) && t.length || "fullWidth" !== m.layout && "FULL_WIDTH" !== m.layout || (g = h), y(s({}, m, {
-    pluginName: d,
+      m = o(e, b);
+  return null != (t = g) && t.length || "fullWidth" !== m.layout && "FULL_WIDTH" !== m.layout || (g = d), f(n({}, m, {
+    pluginName: u,
     generateImageSource: function (e, t, a, r) {
       return {
         width: t,
@@ -509,27 +504,27 @@ function W(e) {
       };
     },
     filename: a,
-    formats: c,
+    formats: h,
     breakpoints: g,
     sourceMetadata: {
       width: r,
-      height: n,
+      height: s,
       format: "auto"
     }
   }));
 }
 
-function j(e, t) {
+function I(e, t) {
   var a,
       i,
       r,
-      n = e.images,
-      o = e.placeholder,
-      d = s({}, l(e, S), {
-    images: s({}, n, {
+      s = e.images,
+      l = e.placeholder,
+      d = n({}, o(e, E), {
+    images: n({}, s, {
       sources: []
     }),
-    placeholder: o && s({}, o, {
+    placeholder: l && n({}, l, {
       sources: []
     })
   });
@@ -538,7 +533,7 @@ function j(e, t) {
         i = t.media,
         r = t.image;
     i ? (r.layout !== e.layout && "development" === "development" && console.warn('[gatsby-plugin-image] Mismatched image layout: expected "' + e.layout + '" but received "' + r.layout + '". All art-directed images use the same layout as the default image'), (a = d.images.sources).push.apply(a, r.images.sources.map(function (e) {
-      return s({}, e, {
+      return n({}, e, {
         media: i
       });
     }).concat([{
@@ -548,46 +543,43 @@ function j(e, t) {
       media: i,
       srcSet: r.placeholder.fallback
     })) :  true && console.warn("[gatsby-plugin-image] All art-directed images passed to must have a value set for `media`. Skipping.");
-  }), (a = d.images.sources).push.apply(a, n.sources), null != o && o.sources && (null == (i = d.placeholder) || (r = i.sources).push.apply(r, o.sources)), d;
+  }), (a = d.images.sources).push.apply(a, s.sources), null != l && l.sources && (null == (i = d.placeholder) || (r = i.sources).push.apply(r, l.sources)), d;
 }
 
-var _,
-    T = ["src", "srcSet", "loading", "alt", "shouldLoad", "innerRef"],
-    A = ["fallback", "sources", "shouldLoad"],
-    O = function (t) {
+var W,
+    R = ["src", "srcSet", "loading", "alt", "shouldLoad"],
+    j = ["fallback", "sources", "shouldLoad"],
+    _ = function (t) {
   var a = t.src,
       i = t.srcSet,
       r = t.loading,
-      n = t.alt,
-      o = void 0 === n ? "" : n,
+      s = t.alt,
+      l = void 0 === s ? "" : s,
       d = t.shouldLoad,
-      u = t.innerRef,
-      c = l(t, T);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", s({}, c, {
+      u = o(t, R);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", n({}, u, {
     decoding: "async",
     loading: r,
     src: d ? a : void 0,
     "data-src": d ? void 0 : a,
     srcSet: d ? i : void 0,
     "data-srcset": d ? void 0 : i,
-    alt: o,
-    ref: u
+    alt: l
   }));
 },
-    z = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(function (t, a) {
-  var i = t.fallback,
-      r = t.sources,
-      n = void 0 === r ? [] : r,
-      o = t.shouldLoad,
-      d = void 0 === o || o,
-      u = l(t, A),
-      c = u.sizes || (null == i ? void 0 : i.sizes),
-      h = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(O, s({}, u, i, {
-    sizes: c,
-    shouldLoad: d,
-    innerRef: a
+    A = function (t) {
+  var a = t.fallback,
+      i = t.sources,
+      r = void 0 === i ? [] : i,
+      s = t.shouldLoad,
+      l = void 0 === s || s,
+      d = o(t, j),
+      u = d.sizes || (null == a ? void 0 : a.sizes),
+      c = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_, n({}, d, a, {
+    sizes: u,
+    shouldLoad: l
   }));
-  return n.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("picture", null, n.map(function (t) {
+  return r.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("picture", null, r.map(function (t) {
     var a = t.media,
         i = t.srcSet,
         r = t.type;
@@ -595,79 +587,79 @@ var _,
       key: a + "-" + r + "-" + i,
       type: r,
       media: a,
-      srcSet: d ? i : void 0,
-      "data-srcset": d ? void 0 : i,
-      sizes: c
+      srcSet: l ? i : void 0,
+      "data-srcset": l ? void 0 : i,
+      sizes: u
     });
-  }), h) : h;
-});
+  }), c) : c;
+};
 
-O.propTypes = {
-  src: prop_types__WEBPACK_IMPORTED_MODULE_3__.string.isRequired,
-  alt: prop_types__WEBPACK_IMPORTED_MODULE_3__.string.isRequired,
-  sizes: prop_types__WEBPACK_IMPORTED_MODULE_3__.string,
-  srcSet: prop_types__WEBPACK_IMPORTED_MODULE_3__.string,
-  shouldLoad: prop_types__WEBPACK_IMPORTED_MODULE_3__.bool
-}, z.displayName = "Picture", z.propTypes = {
-  alt: prop_types__WEBPACK_IMPORTED_MODULE_3__.string.isRequired,
-  shouldLoad: prop_types__WEBPACK_IMPORTED_MODULE_3__.bool,
-  fallback: prop_types__WEBPACK_IMPORTED_MODULE_3__.exact({
-    src: prop_types__WEBPACK_IMPORTED_MODULE_3__.string.isRequired,
-    srcSet: prop_types__WEBPACK_IMPORTED_MODULE_3__.string,
-    sizes: prop_types__WEBPACK_IMPORTED_MODULE_3__.string
+_.propTypes = {
+  src: prop_types__WEBPACK_IMPORTED_MODULE_2__.string.isRequired,
+  alt: prop_types__WEBPACK_IMPORTED_MODULE_2__.string.isRequired,
+  sizes: prop_types__WEBPACK_IMPORTED_MODULE_2__.string,
+  srcSet: prop_types__WEBPACK_IMPORTED_MODULE_2__.string,
+  shouldLoad: prop_types__WEBPACK_IMPORTED_MODULE_2__.bool
+}, A.displayName = "Picture", A.propTypes = {
+  alt: prop_types__WEBPACK_IMPORTED_MODULE_2__.string.isRequired,
+  shouldLoad: prop_types__WEBPACK_IMPORTED_MODULE_2__.bool,
+  fallback: prop_types__WEBPACK_IMPORTED_MODULE_2__.exact({
+    src: prop_types__WEBPACK_IMPORTED_MODULE_2__.string.isRequired,
+    srcSet: prop_types__WEBPACK_IMPORTED_MODULE_2__.string,
+    sizes: prop_types__WEBPACK_IMPORTED_MODULE_2__.string
   }),
-  sources: prop_types__WEBPACK_IMPORTED_MODULE_3__.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_3__.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_3__.exact({
-    media: prop_types__WEBPACK_IMPORTED_MODULE_3__.string.isRequired,
-    type: prop_types__WEBPACK_IMPORTED_MODULE_3__.string,
-    sizes: prop_types__WEBPACK_IMPORTED_MODULE_3__.string,
-    srcSet: prop_types__WEBPACK_IMPORTED_MODULE_3__.string.isRequired
-  }), prop_types__WEBPACK_IMPORTED_MODULE_3__.exact({
-    media: prop_types__WEBPACK_IMPORTED_MODULE_3__.string,
-    type: prop_types__WEBPACK_IMPORTED_MODULE_3__.string.isRequired,
-    sizes: prop_types__WEBPACK_IMPORTED_MODULE_3__.string,
-    srcSet: prop_types__WEBPACK_IMPORTED_MODULE_3__.string.isRequired
+  sources: prop_types__WEBPACK_IMPORTED_MODULE_2__.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_2__.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_2__.exact({
+    media: prop_types__WEBPACK_IMPORTED_MODULE_2__.string.isRequired,
+    type: prop_types__WEBPACK_IMPORTED_MODULE_2__.string,
+    sizes: prop_types__WEBPACK_IMPORTED_MODULE_2__.string,
+    srcSet: prop_types__WEBPACK_IMPORTED_MODULE_2__.string.isRequired
+  }), prop_types__WEBPACK_IMPORTED_MODULE_2__.exact({
+    media: prop_types__WEBPACK_IMPORTED_MODULE_2__.string,
+    type: prop_types__WEBPACK_IMPORTED_MODULE_2__.string.isRequired,
+    sizes: prop_types__WEBPACK_IMPORTED_MODULE_2__.string,
+    srcSet: prop_types__WEBPACK_IMPORTED_MODULE_2__.string.isRequired
   })]))
 };
 
-var L = ["fallback"],
-    C = function (t) {
+var T = ["fallback"],
+    O = function (t) {
   var a = t.fallback,
-      i = l(t, L);
-  return a ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(z, s({}, i, {
+      i = o(t, T);
+  return a ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(A, n({}, i, {
     fallback: {
       src: a
     },
     "aria-hidden": !0,
     alt: ""
-  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", s({}, i));
+  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", n({}, i));
 };
 
-C.displayName = "Placeholder", C.propTypes = {
-  fallback: prop_types__WEBPACK_IMPORTED_MODULE_3__.string,
-  sources: null == (_ = z.propTypes) ? void 0 : _.sources,
+O.displayName = "Placeholder", O.propTypes = {
+  fallback: prop_types__WEBPACK_IMPORTED_MODULE_2__.string,
+  sources: null == (W = A.propTypes) ? void 0 : W.sources,
   alt: function (e, t, a) {
     return e[t] ? new Error("Invalid prop `" + t + "` supplied to `" + a + "`. Validation failed.") : null;
   }
 };
-var q = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(function (t, a) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(z, s({
-    ref: a
-  }, t)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("noscript", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(z, s({}, t, {
+
+var z = function (t) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(A, n({}, t)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("noscript", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(A, n({}, t, {
     shouldLoad: !0
   }))));
-});
-q.displayName = "MainImage", q.propTypes = z.propTypes;
+};
 
-var D = ["children"],
-    P = function () {
+z.displayName = "MainImage", z.propTypes = A.propTypes;
+
+var L = ["children"],
+    q = function () {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("script", {
     type: "module",
     dangerouslySetInnerHTML: {
-      __html: 'const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}'
+      __html: 'const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}'
     }
   });
 },
-    H = function (t) {
+    C = function (t) {
   var a = t.layout,
       i = t.width,
       r = t.height;
@@ -693,107 +685,99 @@ var D = ["children"],
     }
   })) : null;
 },
-    F = function (t) {
-  var i = t.children,
-      r = l(t, D);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(H, s({}, r)), i, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(P, null));
+    D = function (a) {
+  var i = a.children,
+      r = o(a, L);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(C, n({}, r)), i, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(q, null));
 },
-    B = ["as", "children"],
-    G = ["as", "className", "class", "style", "image", "loading", "imgClassName", "imgStyle", "backgroundColor", "objectFit", "objectPosition"],
-    V = ["style", "className"],
-    U = function (e) {
+    P = ["as", "className", "class", "style", "image", "loading", "imgClassName", "imgStyle", "backgroundColor", "objectFit", "objectPosition"],
+    H = ["style", "className"],
+    F = function (e) {
   return e.replace(/\n/g, "");
 },
-    X = function (t) {
+    B = function (t) {
   var a = t.as,
       i = void 0 === a ? "div" : a,
-      r = t.children,
-      n = l(t, B);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(i, s({}, n), r);
-},
-    Y = function (t) {
-  var a = t.as,
-      i = t.className,
-      r = t.class,
-      n = t.style,
-      o = t.image,
-      d = t.loading,
-      u = void 0 === d ? "lazy" : d,
-      c = t.imgClassName,
-      h = t.imgStyle,
-      g = t.backgroundColor,
-      p = t.objectFit,
-      m = t.objectPosition,
-      f = l(t, G);
-  if (!o) return console.warn("[gatsby-plugin-image] Missing image prop"), null;
-  r && (i = r), h = s({
-    objectFit: p,
-    objectPosition: m,
-    backgroundColor: g
-  }, h);
+      r = t.className,
+      s = t.class,
+      l = t.style,
+      d = t.image,
+      u = t.loading,
+      c = void 0 === u ? "lazy" : u,
+      h = t.imgClassName,
+      g = t.imgStyle,
+      p = t.backgroundColor,
+      m = t.objectFit,
+      f = t.objectPosition,
+      v = o(t, P);
+  if (!d) return console.warn("[gatsby-plugin-image] Missing image prop"), null;
+  s && (r = s), g = n({
+    objectFit: m,
+    objectPosition: f,
+    backgroundColor: p
+  }, g);
 
-  var v = o.width,
-      w = o.height,
-      y = o.layout,
-      b = o.images,
-      E = o.placeholder,
-      k = o.backgroundColor,
-      M = function (e, t, a) {
+  var w = d.width,
+      y = d.height,
+      b = d.layout,
+      E = d.images,
+      M = d.placeholder,
+      S = d.backgroundColor,
+      N = function (e, t, a) {
     var i = {},
         r = "gatsby-image-wrapper";
-    return N() || (i.position = "relative", i.overflow = "hidden"), "fixed" === a ? (i.width = e, i.height = t) : "constrained" === a && (N() || (i.display = "inline-block", i.verticalAlign = "top"), r = "gatsby-image-wrapper gatsby-image-wrapper-constrained"), {
+    return k() || (i.position = "relative", i.overflow = "hidden"), "fixed" === a ? (i.width = e, i.height = t) : "constrained" === a && (k() || (i.display = "inline-block", i.verticalAlign = "top"), r = "gatsby-image-wrapper gatsby-image-wrapper-constrained"), {
       className: r,
       "data-gatsby-image-wrapper": "",
       style: i
     };
-  }(v, w, y),
-      S = M.style,
-      R = M.className,
-      x = l(M, V),
-      I = {
+  }(w, y, b),
+      x = N.style,
+      I = N.className,
+      W = o(N, H),
+      R = {
     fallback: void 0,
     sources: []
   };
 
-  return b.fallback && (I.fallback = s({}, b.fallback, {
-    srcSet: b.fallback.srcSet ? U(b.fallback.srcSet) : void 0
-  })), b.sources && (I.sources = b.sources.map(function (e) {
-    return s({}, e, {
-      srcSet: U(e.srcSet)
+  return E.fallback && (R.fallback = n({}, E.fallback, {
+    srcSet: E.fallback.srcSet ? F(E.fallback.srcSet) : void 0
+  })), E.sources && (R.sources = E.sources.map(function (e) {
+    return n({}, e, {
+      srcSet: F(e.srcSet)
     });
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(X, s({}, x, {
-    as: a,
-    style: s({}, S, n, {
-      backgroundColor: g
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(i, n({}, W, {
+    style: n({}, x, l, {
+      backgroundColor: p
     }),
-    className: R + (i ? " " + i : "")
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(F, {
-    layout: y,
-    width: v,
-    height: w
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(C, s({}, function (e, t, a, i, r, n, o, l) {
+    className: I + (r ? " " + r : "")
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(D, {
+    layout: b,
+    width: w,
+    height: y
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(O, n({}, function (e, t, a, i, r, o, s, l) {
     var d = {};
-    n && (d.backgroundColor = n, "fixed" === a ? (d.width = i, d.height = r, d.backgroundColor = n, d.position = "relative") : ("constrained" === a || "fullWidth" === a) && (d.position = "absolute", d.top = 0, d.left = 0, d.bottom = 0, d.right = 0)), o && (d.objectFit = o), l && (d.objectPosition = l);
-    var u = s({}, e, {
+    o && (d.backgroundColor = o, "fixed" === a ? (d.width = i, d.height = r, d.backgroundColor = o, d.position = "relative") : ("constrained" === a || "fullWidth" === a) && (d.position = "absolute", d.top = 0, d.left = 0, d.bottom = 0, d.right = 0)), s && (d.objectFit = s), l && (d.objectPosition = l);
+    var u = n({}, e, {
       "aria-hidden": !0,
       "data-placeholder-image": "",
-      style: s({
+      style: n({
         opacity: 1,
         transition: "opacity 500ms linear"
       }, d)
     });
-    return N() || (u.style = {
+    return k() || (u.style = {
       height: "100%",
       left: 0,
       position: "absolute",
       top: 0,
       width: "100%"
     }), u;
-  }(E, 0, y, v, w, k, p, m))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(q, s({
+  }(M, 0, b, w, y, S, m, f))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(z, n({
     "data-gatsby-image-ssr": "",
-    className: c
-  }, f, function (e, t, a, i, r, n, o, l) {
-    return void 0 === l && (l = {}), N() || (l = s({
+    className: h
+  }, v, function (e, t, a, i, r) {
+    return void 0 === r && (r = {}), k() || (r = n({
       height: "100%",
       left: 0,
       position: "absolute",
@@ -802,54 +786,46 @@ var D = ["children"],
       transition: "opacity 250ms linear",
       width: "100%",
       willChange: "opacity"
-    }, l)), s({}, a, {
+    }, r)), n({}, a, {
       loading: i,
       shouldLoad: e,
       "data-main-image": "",
-      style: s({}, l, {
+      style: n({}, r, {
         opacity: 0
-      }),
-      onLoad: function (e) {
-        var t = e.currentTarget,
-            a = new Image();
-        a.src = t.currentSrc, a.decode ? a.decode().catch(function () {}).then(function () {
-          r(!0);
-        }) : r(!0);
-      },
-      ref: void 0
+      })
     });
-  }("eager" === u, 0, I, u, void 0, 0, 0, h)))));
+  }("eager" === c, 0, R, c, g)))));
 },
-    Z = ["src", "__imageData", "__error", "width", "height", "aspectRatio", "tracedSVGOptions", "placeholder", "formats", "quality", "transformOptions", "jpgOptions", "pngOptions", "webpOptions", "avifOptions", "blurredOptions"],
-    J = function (t) {
+    G = ["src", "__imageData", "__error", "width", "height", "aspectRatio", "tracedSVGOptions", "placeholder", "formats", "quality", "transformOptions", "jpgOptions", "pngOptions", "webpOptions", "avifOptions", "blurredOptions"],
+    V = function (t) {
   return function (a) {
     var i = a.src,
         r = a.__imageData,
-        n = a.__error,
-        o = l(a, Z);
-    return n && console.warn(n), r ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(t, s({
+        s = a.__error,
+        l = o(a, G);
+    return s && console.warn(s), r ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(t, n({
       image: r
-    }, o)) : (console.warn("Image not loaded", i), n || "development" !== "development" || console.warn('Please ensure that "gatsby-plugin-image" is included in the plugins array in gatsby-config.js, and that your version of gatsby is at least 2.24.78'), null);
+    }, l)) : (console.warn("Image not loaded", i), s || "development" !== "development" || console.warn('Please ensure that "gatsby-plugin-image" is included in the plugins array in gatsby-config.js, and that your version of gatsby is at least 2.24.78'), null);
   };
-}(Y),
-    K = function (e, t) {
-  return "fullWidth" !== e.layout || "width" !== t && "height" !== t || !e[t] ? prop_types__WEBPACK_IMPORTED_MODULE_3___default().number.apply((prop_types__WEBPACK_IMPORTED_MODULE_3___default()), [e, t].concat([].slice.call(arguments, 2))) : new Error('"' + t + '" ' + e[t] + " may not be passed when layout is fullWidth.");
+}(B),
+    U = function (e, t) {
+  return "fullWidth" !== e.layout || "width" !== t && "height" !== t || !e[t] ? prop_types__WEBPACK_IMPORTED_MODULE_2___default().number.apply((prop_types__WEBPACK_IMPORTED_MODULE_2___default()), [e, t].concat([].slice.call(arguments, 2))) : new Error('"' + t + '" ' + e[t] + " may not be passed when layout is fullWidth.");
 },
-    Q = new Set(["fixed", "fullWidth", "constrained"]),
-    $ = {
-  src: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().string.isRequired),
+    X = new Set(["fixed", "fullWidth", "constrained"]),
+    Y = {
+  src: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
   alt: function (e, t, a) {
-    return e.alt || "" === e.alt ? prop_types__WEBPACK_IMPORTED_MODULE_3___default().string.apply((prop_types__WEBPACK_IMPORTED_MODULE_3___default()), [e, t, a].concat([].slice.call(arguments, 3))) : new Error('The "alt" prop is required in ' + a + '. If the image is purely presentational then pass an empty string: e.g. alt="". Learn more: https://a11y-style-guide.com/style-guide/section-media.html');
+    return e.alt || "" === e.alt ? prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.apply((prop_types__WEBPACK_IMPORTED_MODULE_2___default()), [e, t, a].concat([].slice.call(arguments, 3))) : new Error('The "alt" prop is required in ' + a + '. If the image is purely presentational then pass an empty string: e.g. alt="". Learn more: https://a11y-style-guide.com/style-guide/section-media.html');
   },
-  width: K,
-  height: K,
-  sizes: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().string),
+  width: U,
+  height: U,
+  sizes: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string),
   layout: function (e) {
-    if (void 0 !== e.layout && !Q.has(e.layout)) return new Error("Invalid value " + e.layout + '" provided for prop "layout". Defaulting to "constrained". Valid values are "fixed", "fullWidth" or "constrained".');
+    if (void 0 !== e.layout && !X.has(e.layout)) return new Error("Invalid value " + e.layout + '" provided for prop "layout". Defaulting to "constrained". Valid values are "fixed", "fullWidth" or "constrained".');
   }
 };
 
-J.displayName = "StaticImage", J.propTypes = $;
+V.displayName = "StaticImage", V.propTypes = Y;
 
 
 /***/ }),

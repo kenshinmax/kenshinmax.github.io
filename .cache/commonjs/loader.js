@@ -3,8 +3,9 @@
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 exports.__esModule = true;
+exports.default = exports.ProdLoader = exports.PageResourceStatus = exports.BaseLoader = void 0;
 exports.getStaticQueryResults = getStaticQueryResults;
-exports.default = exports.publicLoader = exports.setLoader = exports.ProdLoader = exports.BaseLoader = exports.PageResourceStatus = void 0;
+exports.setLoader = exports.publicLoader = void 0;
 
 var _prefetch = _interopRequireDefault(require("./prefetch"));
 
@@ -69,7 +70,10 @@ const doesConnectionSupportPrefetch = () => {
   }
 
   return true;
-};
+}; // Regex that matches common search crawlers
+
+
+const BOT_REGEX = /bot|crawler|spider|crawling/i;
 
 const toPageResources = (pageData, component = null) => {
   const page = {
@@ -396,6 +400,11 @@ class BaseLoader {
   shouldPrefetch(pagePath) {
     // Skip prefetching if we know user is on slow or constrained connection
     if (!doesConnectionSupportPrefetch()) {
+      return false;
+    } // Don't prefetch if this is a crawler bot
+
+
+    if (navigator.userAgent && BOT_REGEX.test(navigator.userAgent)) {
       return false;
     } // Check if the page exists.
 

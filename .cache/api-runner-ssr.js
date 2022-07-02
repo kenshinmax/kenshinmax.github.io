@@ -22,6 +22,10 @@ var plugins = [{
       name: 'gatsby-plugin-react-helmet',
       plugin: require('/Users/cliffsanchez/projects/repos/kenshinmax.github.io/node_modules/gatsby-plugin-react-helmet/gatsby-ssr.js'),
       options: {"plugins":[]},
+    },{
+      name: 'partytown',
+      plugin: require('/Users/cliffsanchez/projects/repos/kenshinmax.github.io/node_modules/gatsby/dist/internal-plugins/partytown/gatsby-ssr.js'),
+      options: {"plugins":[]},
     }]
 /* global plugins */
 // During bootstrap, we write requires at top of this file which looks like:
