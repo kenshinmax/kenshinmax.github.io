@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A starter blog about technology and other interesting things.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 02 Jul 2022 02:31:14 GMT</lastBuildDate><item><title><![CDATA[FullStory | Segment Export]]></title><description><![CDATA[In this article, we will take a look at how to get data out of FullStory using Segment Export. FullStory - Segment Export FullStory is a…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/new-beginnings/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/new-beginnings/</guid><pubDate>Mon, 02 May 2022 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;In this article, we will take a look at how to get data out of FullStory using Segment Export.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A starter blog about technology and other interesting things.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 08 Jul 2022 00:17:29 GMT</lastBuildDate><item><title><![CDATA[FullStory | Segment Export]]></title><description><![CDATA[In this article, we will take a look at how to get data out of FullStory using Segment Export. FullStory - Segment Export FullStory is a…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/fullstory-data-export/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/fullstory-data-export/</guid><pubDate>Mon, 02 May 2022 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;In this article, we will take a look at how to get data out of FullStory using Segment Export.&lt;/p&gt;
 &lt;h3&gt;FullStory - Segment Export&lt;/h3&gt;
-&lt;p&gt;FullStory is a capture all platform that enables you to search any user interaction that occurs during a visit to your digital property.  Using different criteria or “filters” you can refine a cohort of users that you want to analyze by mix and match User and Event criteria.  This is extremely helpful as you start to create and test different hypothesis.&lt;/p&gt;
+&lt;p&gt;FullStory is a capture all platform that enables you to search any user interaction that occurs during a visit to your digital property.  Using different criteria or “filters” you can refine a cohort of users that you want to analyze by mixing and matching User and Event criteria, i.e. users that visited a page, clicked ‘Add to Cart’ and proceeded to checkout.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
@@ -48,18 +48,6 @@
 &lt;p&gt;&lt;a href=&quot;https://developer.fullstory.com/create-segment-export&quot;&gt;https://developer.fullstory.com/create-segment-export&lt;/a&gt;
 &lt;a href=&quot;https://developer.fullstory.com/get-operation&quot;&gt;https://developer.fullstory.com/get-operation&lt;/a&gt;
 &lt;a href=&quot;https://developer.fullstory.com/get-export-results&quot;&gt;https://developer.fullstory.com/get-export-results&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3&gt;Data Destinations&lt;/h3&gt;
-&lt;p&gt;When she reached the first hills of the &lt;strong&gt;Italic Mountains&lt;/strong&gt;, she had a last
-view back on the skyline of her hometown &lt;em&gt;Bookmarksgrove&lt;/em&gt;, the headline of
-&lt;a href=&quot;http://google.com&quot;&gt;Alphabet Village&lt;/a&gt; and the subline of her own road, the Line
-Lane. Pityful a rhetoric question ran over her cheek, then she continued her
-way. On her way she met a copy.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The copy warned the Little Blind Text, that where it came from it would have
-been rewritten a thousand times and everything that was left from its origin
-would be the word “and” and the Little Blind Text should turn around and
-return to its own, safe country.&lt;/p&gt;
 &lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[My Second Post!]]></title><description><![CDATA[Wow! I love blogging so much already. Did you know that “despite its name, salted duck eggs can also be made from
 chicken eggs, though the…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/my-second-post/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/my-second-post/</guid><pubDate>Wed, 06 May 2015 23:46:37 GMT</pubDate><content:encoded>&lt;p&gt;Wow! I love blogging so much already.&lt;/p&gt;
 &lt;p&gt;Did you know that “despite its name, salted duck eggs can also be made from
