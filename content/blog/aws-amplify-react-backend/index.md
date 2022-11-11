@@ -3,7 +3,15 @@ title: AWS Amplify Authentication with React
 date: "2022-09-03T23:46:37.121Z"
 ---
 
-Creating and managing users for your application is a core part of any project.  During initial development of Goshimmy we only had a static list of users but now with AWS Amplify we can add these capabilities with minimal effort.  This will help focus development efforts on the core platform and not identity management.
+Creating and managing users within a React application is a fairly common use case.  During the initial development of [Goshimmy.me](https://www.goshimmy.me) we started with a simple user management implementation but it had several moving parts and was complex to scale.  As more users created accounnts, it was clear that our applicationn required a better and more feature rich solution.
+
+So earlier this year we started to research platforms that could help us with user sign-up, handling Multi-Factor Authenticationn (MFA) and solid support for React.  AWS Amplify was at the top of the list because not only can we manage users but also leverage an entire set of backend capabilities like:
+
+* Authentication
+* DataStore
+* Analytics
+
+The reason we chose to add AWS Amplify was to help us focus on development efforts of the core platform and not identity management.   One of the main
 
 In this article we will take a look at the steps to configure AWS Amplify and setup User Authentication
 

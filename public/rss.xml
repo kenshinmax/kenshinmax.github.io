@@ -1,32 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A starter blog about technology and other interesting things.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 08 Jul 2022 14:02:35 GMT</lastBuildDate><item><title><![CDATA[FullStory | Segment Export]]></title><description><![CDATA[In this article, we will take a look at how to get data out of FullStory using Segment Export. FullStory - Segment Export FullStory is a…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/fullstory-data-export/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/fullstory-data-export/</guid><pubDate>Mon, 02 May 2022 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;In this article, we will take a look at how to get data out of FullStory using Segment Export.&lt;/p&gt;
-&lt;h3&gt;FullStory - Segment Export&lt;/h3&gt;
-&lt;p&gt;FullStory is a capture all platform that enables you to search any user interaction that occurs during a visit to your digital property.  Using different criteria or “filters” you can refine a cohort of users that you want to analyze by mixing and matching User and Event criteria, i.e. users that visited a page, clicked ‘Add to Cart’ and proceeded to checkout.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A starter blog about technology and other interesting things.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 21 Oct 2022 01:02:52 GMT</lastBuildDate><item><title><![CDATA[AWS Amplify Authentication with React]]></title><description><![CDATA[Creating and managing users for your application is a core part of any project.  During initial development of Goshimmy.me we had a very…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/aws-amplify-react-backend/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/aws-amplify-react-backend/</guid><pubDate>Sat, 03 Sep 2022 23:46:37 GMT</pubDate><content:encoded>&lt;p&gt;Creating and managing users for your application is a core part of any project.  During initial development of &lt;a href=&quot;https://www.goshimmy.me&quot;&gt;Goshimmy.me&lt;/a&gt; we had a very unscalable way of managing users - several moving parts.  As more users signed up, we realized that we needed a better was to manage users, profiles, etc.&lt;/p&gt;
+&lt;p&gt;So earlier this year we started to research platforms that could help us with users signing up, handling MFA and support for React.  AWS Amplify was at the top of the list because we can create and manage users and leverage an entire set of backend capabilities like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Authentication&lt;/li&gt;
+&lt;li&gt;DataStore&lt;/li&gt;
+&lt;li&gt;Analytics&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The reason we chose to add AWS Amplify was to help us focus on development efforts of the core platform and not identity management.   One of the main&lt;/p&gt;
+&lt;p&gt;In this article we will take a look at the steps to configure AWS Amplify and setup User Authentication&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/8450c6327b3405ccfd6420f8605af85f/0f98f/fullstory-segments-star-recent.jpg&quot;
+    href=&quot;/static/bebe5479c74811a33563c23ef254a5ec/e5166/aws-amplify.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAKABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAe9cioP/xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAEFAl//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAXEAADAQAAAAAAAAAAAAAAAAAAARAx/9oACAEBAAE/Ia9iP//aAAwDAQACAAMAAAAQAw//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAYEAEBAQEBAAAAAAAAAAAAAAABACERgf/aAAgBAQABPxAVfYmxnJXjrJ57f//Z&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 52.53164556962025%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIE/8QAFwEAAwEAAAAAAAAAAAAAAAAAAAEEBf/aAAwDAQACEAMQAAAB00ZNwI//xAAWEAADAAAAAAAAAAAAAAAAAAAAASD/2gAIAQEAAQUCHP8A/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAGBABAAMBAAAAAAAAAAAAAAAAAQARICH/2gAIAQEAAT8hgB43n//aAAwDAQACAAMAAAAQgA//xAAVEQEBAAAAAAAAAAAAAAAAAAAQQf/aAAgBAwEBPxCn/8QAFhEBAQEAAAAAAAAAAAAAAAAAAREQ/9oACAECAQE/EBJJn//EABgQAQEBAQEAAAAAAAAAAAAAAAEAESEx/9oACAEBAAE/EDrkaM2ew8iYv//Z&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;FullStory Segment&quot;
-        title=&quot;FullStory Segment&quot;
-        src=&quot;/static/8450c6327b3405ccfd6420f8605af85f/828fb/fullstory-segments-star-recent.jpg&quot;
-        srcset=&quot;/static/8450c6327b3405ccfd6420f8605af85f/ff44c/fullstory-segments-star-recent.jpg 158w,
-/static/8450c6327b3405ccfd6420f8605af85f/a6688/fullstory-segments-star-recent.jpg 315w,
-/static/8450c6327b3405ccfd6420f8605af85f/828fb/fullstory-segments-star-recent.jpg 630w,
-/static/8450c6327b3405ccfd6420f8605af85f/0ede0/fullstory-segments-star-recent.jpg 945w,
-/static/8450c6327b3405ccfd6420f8605af85f/3ac88/fullstory-segments-star-recent.jpg 1260w,
-/static/8450c6327b3405ccfd6420f8605af85f/0f98f/fullstory-segments-star-recent.jpg 1920w&quot;
+        alt=&quot;AWS Amplify&quot;
+        title=&quot;AWS Amplify&quot;
+        src=&quot;/static/bebe5479c74811a33563c23ef254a5ec/828fb/aws-amplify.jpg&quot;
+        srcset=&quot;/static/bebe5479c74811a33563c23ef254a5ec/ff44c/aws-amplify.jpg 158w,
+/static/bebe5479c74811a33563c23ef254a5ec/a6688/aws-amplify.jpg 315w,
+/static/bebe5479c74811a33563c23ef254a5ec/828fb/aws-amplify.jpg 630w,
+/static/bebe5479c74811a33563c23ef254a5ec/0ede0/aws-amplify.jpg 945w,
+/static/bebe5479c74811a33563c23ef254a5ec/e5166/aws-amplify.jpg 1200w&quot;
         sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -34,27 +39,14 @@
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;In some cases, you may want to export data collected by Fullstory to analyze with other tools, like Tableau or Domo.  This can easily be accomplished using FullStory  Segment Export.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;img src=&quot;https://www.fullstory.com/blog/starred-segments/&quot; alt=&quot;Create a Segment&quot;&gt;&lt;/li&gt;
-&lt;li&gt;Click Data Export&lt;/li&gt;
-&lt;li&gt;Select output format&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3&gt;On-Demand exports&lt;/h3&gt;
-&lt;p&gt;Segment exports are generated “on-demand” which means that when you create a request for export, it is directly coming from the FullStory servers.  As a rule of thumb, waiting 24 hours before exporting data for best results.  These export files are available for 7 days from when the export is completed.&lt;/p&gt;
-&lt;h3&gt;Use the FullStory API&lt;/h3&gt;
-&lt;p&gt;Great news, with the FullStory API you can automate the export process.  It’s a three step process. First, make a request to FullStory to kick-off the export process &lt;a href=&quot;https://developer.fullstory.com/create-segment-export&quot;&gt;Create Segment Export API&lt;/a&gt;.  Next, make  a request to the Export Operations API to get the ID for the finished data export operation (operation ID).  Lastly, make a request to the export results API to get the actual file location to download.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://developer.fullstory.com/create-segment-export&quot;&gt;https://developer.fullstory.com/create-segment-export&lt;/a&gt;
-&lt;a href=&quot;https://developer.fullstory.com/get-operation&quot;&gt;https://developer.fullstory.com/get-operation&lt;/a&gt;
-&lt;a href=&quot;https://developer.fullstory.com/get-export-results&quot;&gt;https://developer.fullstory.com/get-export-results&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[My Second Post!]]></title><description><![CDATA[Wow! I love blogging so much already. Did you know that “despite its name, salted duck eggs can also be made from
-chicken eggs, though the…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/my-second-post/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/my-second-post/</guid><pubDate>Wed, 06 May 2015 23:46:37 GMT</pubDate><content:encoded>&lt;p&gt;Wow! I love blogging so much already.&lt;/p&gt;
-&lt;p&gt;Did you know that “despite its name, salted duck eggs can also be made from
-chicken eggs, though the taste and texture will be somewhat different, and the
-egg yolk will be less rich.”?
-(&lt;a href=&quot;https://en.wikipedia.org/wiki/Salted_duck_egg&quot;&gt;Wikipedia Link&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;Yeah, I didn’t either.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hello World]]></title><description><![CDATA[This is my first post on my new fake blog! How exciting! I’m sure I’ll write a lot more interesting things in the future. Oh, and here’s a…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/hello-world/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/hello-world/</guid><pubDate>Fri, 01 May 2015 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;This is my first post on my new fake blog! How exciting!&lt;/p&gt;
+&lt;p&gt;Pre-requisite is to install &lt;a href=&quot;https://docs.amplify.aws/cli/start/install/&quot;&gt;AWS Amplify&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;First, we need to install &lt;a href=&quot;https://docs.amplify.aws/lib/auth/getting-started/q/platform/js/&quot;&gt;AWS Amplify&lt;/a&gt;.  My project is created with React and is hosted with AWS Amplify as well, so here I will follow the steps for Javascript.&lt;/p&gt;
+&lt;p&gt;Next, we have to initialize a new Amplify project by using the amplify init command:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;amplify init&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If you have an existing &lt;a href=&quot;https://docs.amplify.aws/cli/start/install/#option-2-follow-the-instructions&quot;&gt;AWS Amplify project&lt;/a&gt; and want to pull your Amplify project use the following command:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;amplify pull --appId (your app id) --envName (env name)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then start your project&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;yarn start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Twilio Segment Identity API]]></title><description><![CDATA[Getting events into FullStory from Twilio Segment has become even easier with the FullStory Segment Server-side integration - released…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/twilio-segment-identity-api/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/twilio-segment-identity-api/</guid><pubDate>Mon, 15 Aug 2022 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;Getting events into FullStory from Twilio Segment has become even easier with the FullStory Segment Server-side integration - released August 2022.&lt;/p&gt;
 &lt;p&gt;I’m sure I’ll write a lot more interesting things in the future.&lt;/p&gt;
 &lt;p&gt;Oh, and here’s a great quote from this Wikipedia on
 &lt;a href=&quot;https://en.wikipedia.org/wiki/Salted_duck_egg&quot;&gt;salted duck eggs&lt;/a&gt;.&lt;/p&gt;
@@ -272,4 +264,54 @@ __double underscores__&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This paragraph has some &lt;code class=&quot;language-text&quot;&gt;code&lt;/code&gt; in it.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;This paragraph has some `code` in it.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;img src=&quot;https://placehold.it/200x50&quot; alt=&quot;Alt Text&quot; title=&quot;Image Title&quot;&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;![Alt Text](https://placehold.it/200x50 &quot;Image Title&quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item></channel></rss>
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;![Alt Text](https://placehold.it/200x50 &quot;Image Title&quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[FullStory | Segment Export]]></title><description><![CDATA[In this article, we will take a look at how to get data out of FullStory using Segment Export. FullStory - Segment Export FullStory is a…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/fullstory-data-export/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/fullstory-data-export/</guid><pubDate>Mon, 02 May 2022 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;In this article, we will take a look at how to get data out of FullStory using Segment Export.&lt;/p&gt;
+&lt;h3&gt;FullStory - Segment Export&lt;/h3&gt;
+&lt;p&gt;FullStory is a capture all platform that enables you to search any user interaction that occurs during a visit to your digital property.  Using different criteria or “filters” you can refine a cohort of users that you want to analyze by mixing and matching User and Event criteria, i.e. users that visited a page, clicked ‘Add to Cart’ and proceeded to checkout.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/8450c6327b3405ccfd6420f8605af85f/0f98f/fullstory-segments-star-recent.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAKABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAe9cioP/xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAEFAl//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAXEAADAQAAAAAAAAAAAAAAAAAAARAx/9oACAEBAAE/Ia9iP//aAAwDAQACAAMAAAAQAw//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAYEAEBAQEBAAAAAAAAAAAAAAABACERgf/aAAgBAQABPxAVfYmxnJXjrJ57f//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;FullStory Segment&quot;
+        title=&quot;FullStory Segment&quot;
+        src=&quot;/static/8450c6327b3405ccfd6420f8605af85f/828fb/fullstory-segments-star-recent.jpg&quot;
+        srcset=&quot;/static/8450c6327b3405ccfd6420f8605af85f/ff44c/fullstory-segments-star-recent.jpg 158w,
+/static/8450c6327b3405ccfd6420f8605af85f/a6688/fullstory-segments-star-recent.jpg 315w,
+/static/8450c6327b3405ccfd6420f8605af85f/828fb/fullstory-segments-star-recent.jpg 630w,
+/static/8450c6327b3405ccfd6420f8605af85f/0ede0/fullstory-segments-star-recent.jpg 945w,
+/static/8450c6327b3405ccfd6420f8605af85f/3ac88/fullstory-segments-star-recent.jpg 1260w,
+/static/8450c6327b3405ccfd6420f8605af85f/0f98f/fullstory-segments-star-recent.jpg 1920w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;In some cases, you may want to export data collected by Fullstory to analyze with other tools, like Tableau or Domo.  This can easily be accomplished using FullStory  Segment Export.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a Segment &lt;a href=&quot;https://www.fullstory.com/blog/starred-segments/&quot;&gt;FullStory Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://help.fullstory.com/hc/en-us/articles/360020829273-What-is-Data-Export-&quot;&gt;Click Data Export&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Select output format&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;On-Demand exports&lt;/h3&gt;
+&lt;p&gt;Segment exports are generated “on-demand” which means that when you create a request for export, it is directly coming from the FullStory servers.  As a rule of thumb, waiting 24 hours before exporting data for best results.  These export files are available for 7 days from when the export is completed.&lt;/p&gt;
+&lt;h3&gt;Use the FullStory API&lt;/h3&gt;
+&lt;p&gt;Great news, with the FullStory API you can automate the export process.  It’s a three step process. First, make a request to FullStory to kick-off the export process &lt;a href=&quot;https://developer.fullstory.com/create-segment-export&quot;&gt;Create Segment Export API&lt;/a&gt;.  Next, make  a request to the Export Operations API to get the ID for the finished data export operation (operation ID).  Lastly, make a request to the export results API to get the actual file location to download.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://developer.fullstory.com/create-segment-export&quot;&gt;https://developer.fullstory.com/create-segment-export&lt;/a&gt;
+&lt;a href=&quot;https://developer.fullstory.com/get-operation&quot;&gt;https://developer.fullstory.com/get-operation&lt;/a&gt;
+&lt;a href=&quot;https://developer.fullstory.com/get-export-results&quot;&gt;https://developer.fullstory.com/get-export-results&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded></item></channel></rss>

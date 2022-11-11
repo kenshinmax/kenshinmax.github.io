@@ -3,9 +3,9 @@ module.exports = {
     title: `Personal Blog`,
     author: {
       name: `Cliff Sanchez`,
-      summary: `who lives and works in New York building useful things.`,
+      summary: `who lives and works in New York - building useful things.`,
     },
-    description: `A starter blog about technology and other interesting things.`,
+    description: `A blog about technology and the Jamtack (Javascript, APIs and Markup)`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
       twitter: `sanchezruns`,

@@ -14,8 +14,8 @@ FullStory is a capture all platform that enables you to search any user interact
 
 In some cases, you may want to export data collected by Fullstory to analyze with other tools, like Tableau or Domo.  This can easily be accomplished using FullStory  Segment Export.
 
-1. ![Create a Segment](https://www.fullstory.com/blog/starred-segments/) 
-2.  Click Data Export
+1. Create a Segment [FullStory Documentation](https://www.fullstory.com/blog/starred-segments/) 
+2. [Click Data Export](https://help.fullstory.com/hc/en-us/articles/360020829273-What-is-Data-Export-)
 3.  Select output format
 ### On-Demand exports
 
