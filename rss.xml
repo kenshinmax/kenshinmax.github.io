@@ -1,12 +1,47 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog about technology and the Jamtack (Javascript, APIs and Markup)]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 28 Nov 2022 18:14:40 GMT</lastBuildDate><item><title><![CDATA[AWS Amplify Authentication with React]]></title><description><![CDATA[Creating and managing users within a React application is a fairly common use case.  During the initial development of Goshimmy.me we…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/aws-amplify-react-backend/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/aws-amplify-react-backend/</guid><pubDate>Sat, 03 Sep 2022 23:46:37 GMT</pubDate><content:encoded>&lt;p&gt;Creating and managing users within a React application is a fairly common use case.  During the initial development of &lt;a href=&quot;https://www.goshimmy.me&quot;&gt;Goshimmy.me&lt;/a&gt; we started with a simple user management implementation but it had several moving parts and was complex to scale.  As more users created accounnts, it was clear that our applicationn required a better and more feature rich solution.&lt;/p&gt;
-&lt;p&gt;So earlier this year we started to research platforms that could help us with user sign-up, handling Multi-Factor Authenticationn (MFA) and solid support for React.  AWS Amplify was at the top of the list because not only can we manage users but also leverage an entire set of backend capabilities like:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Authentication&lt;/li&gt;
-&lt;li&gt;DataStore&lt;/li&gt;
-&lt;li&gt;Analytics&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The reason we chose to add AWS Amplify was to help us focus on development efforts of the core platform and not identity management.   One of the main&lt;/p&gt;
-&lt;p&gt;In this article we will take a look at the steps to configure AWS Amplify and setup User Authentication&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog about technology and the Jamtack (Javascript, APIs and Markup)]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 01 Aug 2023 16:14:43 GMT</lastBuildDate><item><title><![CDATA[Splunk - Operator for Kubernetes]]></title><description><![CDATA[The Splunk Operator for Kubernetes enables organizations to easily deploy, scale, and manage Splunk Enterprise on your choice of cloud…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/splunk-kubernetes-operator/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/splunk-kubernetes-operator/</guid><pubDate>Sat, 03 Sep 2022 23:46:37 GMT</pubDate><content:encoded>&lt;p&gt;The Splunk Operator for Kubernetes enables organizations to easily deploy, scale, and manage Splunk Enterprise on your choice of cloud environment.  With containers and Kubernetes becoming part of many modernization initiatives - teams can build and test Splunk effeciently at scale.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/68a66d2cb185269c284be3f99f9c7acf/442cb/splunk-k8s.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 52.53164556962025%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+0lEQVQoz52SvWtTYRTG33zd7zTQ3FxTjDZJm9xqIdbkJmvTpILQipjoIH4MDopmcHBKEByCHeyWZgwOkkXcpLo46SCtf4D/hZS0omKFn9xXUnEyOjwcOO/Lj+c554hiscjq6jlWaqtUV2osV1eoVCr4/VKpNJE8z2NpaYl6vY4QQmAaOroiUEMCJSgIBoP+wz/LsqxfQNuZ4bh3h9yFpyTcdaKWgWUaKIo6EWhswHEcRDg6S+X2Dhcff6YzPOT8oxGLzSHWVBxdU8nn8+RyOarVKo1Gg0QiQaFQoNlsyqrrOuFwWAJt20YYuZvc6MH2zohXu/s8f3tA7eE+sVSFoBDcvdei1+uxsbHBYDCg2+3Sbrfp9/u0Wi1c1yUej/8GOss9OsMfvP6wz/uP33jxbsStrS/YZ1tynidOpqWbVCpFMplkbm4O0zSZnp6WGrs7AtrF+1zePOTZmz22dw/Yejmi1vlEwl1DUwShUHjipUhgQAgy60OubH7n6pM91rpfccoPMBSBphvShT8rP1o6nZbz9F1ms1l5KoZh/AkMBgTOzCwzZ65jL17j2OlLxKaiWJaJpmlEIhFUVZXRfCmKIjXu+xsOBAIS6C9Mnk3UMonqAQxVoEeE/Pg/dxiLxRCum8crlymWvCMtLJySkebn5/8qP75fM5kM5XKZnx64Rymwa1TgAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Splunk Kubernetes Operator&quot;
+        title=&quot;Splunk Kubernetes Operator&quot;
+        src=&quot;/static/68a66d2cb185269c284be3f99f9c7acf/f058b/splunk-k8s.png&quot;
+        srcset=&quot;/static/68a66d2cb185269c284be3f99f9c7acf/c26ae/splunk-k8s.png 158w,
+/static/68a66d2cb185269c284be3f99f9c7acf/6bdcf/splunk-k8s.png 315w,
+/static/68a66d2cb185269c284be3f99f9c7acf/f058b/splunk-k8s.png 630w,
+/static/68a66d2cb185269c284be3f99f9c7acf/442cb/splunk-k8s.png 752w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The initial release of verion 1.0 was in 2021 and version 2.0 dropped in 2022, with the evolution of the Splunk Operator App Framework.&lt;/p&gt;
+&lt;h3&gt;What is a Kubernetes Operator?&lt;/h3&gt;
+&lt;p&gt;Operators are software extensions to Kubernetes that make use of a custom resource to manage applications and their components.  Operators follow Kubernetes principles, notably the control loop.&lt;/p&gt;
+&lt;p&gt;The exciting part about the Splunk Operator for Kubernetes is that it presents a real opportunity for customers to create their own automation to get Splunk running, especially at scale.&lt;/p&gt;
+&lt;h4&gt;Splunk Operator for Kubernetes&lt;/h4&gt;
+&lt;p&gt;With the Operater pattern in mind, the &lt;b&gt;Splunk Kubernetes Operator&lt;/b&gt; takes the steps that a Splunk Administrator would take to create Splunk instances in a uniform and best practice way and automates it.  Think of having the ability to simply enter a single command and have a clustered Splunk environment created based on the Splunk Validated Architecture.  I know, this is exciting!&lt;/p&gt;
+&lt;h4&gt;Pre-reqs&lt;/h4&gt;
+&lt;p&gt;To get started, I would suggest installing a couple of items for local development.&lt;/p&gt;
+&lt;h5&gt;Minikube&lt;/h5&gt;
+&lt;p&gt;Installing Minikube on you local machine enbables you to do local development and testing of Kubernetes on you laptop or desktop.&lt;/p&gt;
+&lt;h5&gt;Kubectl&lt;/h5&gt;
+&lt;p&gt;Is a client that connects to your Kubernetes cluster and makes it easy to send commands via command-line vs calling the Kubernetes API directly.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[AWS Amplify Authentication with React]]></title><description><![CDATA[In this article we will take a look at the steps to configure AWS Amplify and setup User Authentication  Creating and managing users for…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/aws-amplify-react-backend/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/aws-amplify-react-backend/</guid><pubDate>Sat, 03 Sep 2022 23:46:37 GMT</pubDate><content:encoded>&lt;p&gt;In this article we will take a look at the steps to configure AWS Amplify and setup User Authentication&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
@@ -39,14 +74,70 @@
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Creating and managing users for your application can be difficult and time consuming to get right. With AWS Amplify you can get started easily.  During the initial development of &lt;a href=&quot;https://www.goshimmy.me&quot;&gt;Goshimmy.me&lt;/a&gt; we started with a simple user management implementation.  Over time, what we noticed was that our implementation had become complex and hard to scale.  As more users signed up it was clear that our applicationn required a feature rich solution.&lt;/p&gt;
+&lt;p&gt;So earlier this year we started to research solutions to help us with user sign-up, Multi-Factor Authenticationn (MFA) and support for React.  AWS Amplify was at the top of the list.  Not only can we manage users but also leverage an entire set of backend capabilities like:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.amplify.aws/lib/auth/getting-started/q/platform/js/&quot;&gt;AWS Authentication&lt;/a&gt;: Leverages &lt;a href=&quot;https://aws.amazon.com/cognito/&quot;&gt;AWS Cognito&lt;/a&gt; under the hood as the main authentication provider.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.amplify.aws/lib/datastore/getting-started/q/platform/js/&quot;&gt;AWS Amplify DataStore&lt;/a&gt;: An on-device storage engine that automatically synchronizes data between your mobile and web apps and your database in the AWS cloud to help you build real-time and offline apps faster.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.amplify.aws/lib/analytics/getting-started/q/platform/js/&quot;&gt;AWS Analytics&lt;/a&gt;: The Analytics category enables you to collect analytics data for your App&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The reason we chose AWS Amplify was to help us focus on development efforts of the core platform and not identity management capabilities.&lt;/p&gt;
 &lt;p&gt;Pre-requisite is to install &lt;a href=&quot;https://docs.amplify.aws/cli/start/install/&quot;&gt;AWS Amplify&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;First, we need to install &lt;a href=&quot;https://docs.amplify.aws/lib/auth/getting-started/q/platform/js/&quot;&gt;AWS Amplify&lt;/a&gt;.  My project is created with React and is hosted with AWS Amplify as well, so here I will follow the steps for Javascript.&lt;/p&gt;
+&lt;p&gt;My project is created with React and is hosted with AWS Amplify, so below are the steps for Javascript.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npm install -g @aws-amplify/cli&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Next, we have to initialize a new Amplify project by using the amplify init command:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;amplify init&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;If you have an existing &lt;a href=&quot;https://docs.amplify.aws/cli/start/install/#option-2-follow-the-instructions&quot;&gt;AWS Amplify project&lt;/a&gt; and want to pull your Amplify project use the following command:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;amplify pull --appId (your app id) --envName (env name)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Then start your project&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;yarn start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Splunk Intro - search commands]]></title><description><![CDATA[For organizations with specific IT Operations and Security challenges, Splunk’s new Enterprise Rapid Adoption Packages packages provide the…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/splunk-integration-with-sentry-io/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/splunk-integration-with-sentry-io/</guid><pubDate>Sat, 03 Sep 2022 23:46:37 GMT</pubDate><content:encoded>&lt;p&gt;For organizations with specific IT Operations and Security challenges, Splunk’s new Enterprise Rapid Adoption Packages packages provide the industry’s leading solution to solve challenges with the shortest time to value and most effective deployment cost. Unlike competitors, Splunk Enterprise Rapid Adoption Packages will allow customers to cost-effectively license additional Rapid Adoption Packages to solve a broad set of challenges typically found in smaller or departmental IT and security environments.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Twilio Segment Identity API]]></title><description><![CDATA[Getting events into FullStory from Twilio Segment has become even easier with the FullStory Segment Server-side integration - released…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/twilio-segment-identity-api/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/twilio-segment-identity-api/</guid><pubDate>Mon, 15 Aug 2022 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;Getting events into FullStory from Twilio Segment has become even easier with the FullStory Segment Server-side integration - released August 2022.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;yarn start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Add authentication&lt;/h3&gt;
+&lt;p&gt;To add authentication to your app, run the following command:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;amplify add auth&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This will walk you through a set of questions, for example:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;? Do you want to use the default authentication 
+and security configuration? Default configuration
+Warning: you will not be able to edit these selections. 
+? How do you want users to be able to sign in? Username
+? Do you want to configure advanced settings? No, I am done.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To deploy the service, run the push command:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;amplify push&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;That’s it!  In the background, AWS Amplify is configuring Cognito, user pools, etc.  In addition, having UI for users that hooks into the autentication service we just created would be pretty neat.  Well, no worries AWS Amplify has you covered.&lt;/p&gt;
+&lt;h3&gt;Add the Login UI&lt;/h3&gt;
+&lt;p&gt;The &lt;a href=&quot;https://docs.amplify.aws/start/getting-started/auth/q/integration/react/#create-login-ui&quot;&gt;AWS Amplify UI&lt;/a&gt; authentication component provides a complete authentication flow for your application with the helpf of configuration you specify in aws-export.js.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/7bfc2dfaf2a04f985f8215db837115e4/8078c/gs-login.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 51.26582278481012%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABiElEQVQoz3WRy07CQBSGeQaNiUgUo5GpnSKXlhZKsSiRuHBlfAATlxqjUYlA5RJRwkUjBvCa+AwuNXHhk/1mRqhV6eLLXM45//nnjCemriIlb8LQNxA3M4hoKUTjyxw5bkJJmIjpaRtFT9txjpbiOanMOpIrWXgESYYgKSOZIyFMz4mYmiHw+Qmm/AS+WQGEutdwQZYwhF2yNSBGkbcq6N89odm+QevqFtc3XdTqLUhhjceHuU48wohuw+DeQQ7l8wYKpRqK5QucVes4yZdBQ5qrSy5I2MGZMBDMWZfo3L2g1XlAu/OI6+4zas0uaFi3Hf4TtDs5nszGEKAyjo5zaDYasKwSSqUyqpUq8vkCdxgQZfcZOp/6s49ip/CAwv0nir03WP13nPY+cNh+BQ0nQNwczgciWFiMOD7kG+bYq25jTD/EpLEPr7GPcf0AE4ldEEmFPaq/gtmtJFQzg2CUdXU4lBSIdAmUShDFIIcyaBAj5z4UNNYMRDTz98+xlRfFOMIAYqO4OvwCvpVVZA1fIKMAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Login&quot;
+        title=&quot;AWS Amplify UI&quot;
+        src=&quot;/static/7bfc2dfaf2a04f985f8215db837115e4/f058b/gs-login.png&quot;
+        srcset=&quot;/static/7bfc2dfaf2a04f985f8215db837115e4/c26ae/gs-login.png 158w,
+/static/7bfc2dfaf2a04f985f8215db837115e4/6bdcf/gs-login.png 315w,
+/static/7bfc2dfaf2a04f985f8215db837115e4/f058b/gs-login.png 630w,
+/static/7bfc2dfaf2a04f985f8215db837115e4/40601/gs-login.png 945w,
+/static/7bfc2dfaf2a04f985f8215db837115e4/78612/gs-login.png 1260w,
+/static/7bfc2dfaf2a04f985f8215db837115e4/8078c/gs-login.png 2218w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Twilio Segment Identity API]]></title><description><![CDATA[Getting events into FullStory from Twilio Segment has become even easier with the FullStory Segment Server-side integration - released…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/twilio-segment-identity-api/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/twilio-segment-identity-api/</guid><pubDate>Mon, 15 Aug 2022 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;Getting events into FullStory from Twilio Segment has become even easier with the FullStory Segment Server-side integration - released August 2022.&lt;/p&gt;
 &lt;p&gt;I’m sure I’ll write a lot more interesting things in the future.&lt;/p&gt;
 &lt;p&gt;Oh, and here’s a great quote from this Wikipedia on
 &lt;a href=&quot;https://en.wikipedia.org/wiki/Salted_duck_egg&quot;&gt;salted duck eggs&lt;/a&gt;.&lt;/p&gt;
